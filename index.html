@@ -29,7 +29,6 @@
     <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -59,11 +58,14 @@
             Papers
             </a>
             <div class="navbar-dropdown">
-            <a class="navbar-item" href="">
-                paper 1
+            <a class="navbar-item" href="papers-pages/zero-shot-eval.html">
+                Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned
             </a>
-            <a class="navbar-item" href="">
-                paper 2
+            <a class="navbar-item" href="papers-pages/control-barrier-safety-instructions.html">
+                Guided by Guardrails: Control Barrier Functions as Safety Instructors for Robotic Learning
+            </a>
+            <a class="navbar-item" href="papers-pages/learning-control-barrier-survey.html">
+                Learning Control Barrier Functions and their application in Reinforcement Learning: A Survey
             </a>
             </div>
         </div>
@@ -105,27 +107,7 @@
                     <span class="icon">
                         <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
-                    </a>
-                </span>
-                <!-- Dataset Link. -->
-                <span class="link-block">
-                    <a href=""
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="far fa-images"></i>
-                    </span>
-                    <span>Data</span>
-                    </a>
-                </span>
-                <!-- BibTex. -->
-                <span class="link-block">
-                    <a href=""
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fas fa-quote-left"></i>
-                    </span>
-                    <span>BibTex</span>
+                    <span>GiHub</span>
                     </a>
                 </span>
                 </div>
@@ -140,7 +122,7 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
       <h2 class="subtitle has-text-centered">
-        Petite phrase/paragraphe resume
+        Hi I'm Maeva, student at Polytechnique Montréal bla bla
       </h2>
     </div>
 </section>
@@ -200,20 +182,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            bla bla paragraphe résumé. Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit. Aenean varius, massa in blandit hendrerit, 
+            nunc diam semper risus, eget vestibulum mi est ac diam. Maecenas sed 
+            sagittis justo. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Pellentesque malesuada suscipit e
+            x a dignissim. Curabitur vitae tincidunt tellus. Sed faucibus lorem metus, 
+            ac finibus odio maximus auctor. Phasellus accumsan libero vel finibus efficitur. 
+            Proin non enim at massa auctor ultricies pulvinar sit amet tellus. Morbi vel sapien metus. 
+            Duis molestie, lorem sit amet suscipit scelerisque, nisl mauris vestibulum lorem, 
+            eget finibus ligula dui ac neque. Nullam iaculis ac eros eget egestas.
           </p>
         </div>
       </div>
@@ -228,35 +206,22 @@
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- Photo -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <img src="./static/images/20250929_154154.jpg">
         </div>
       </div>
-      <!--/ Visual Effects. -->
+      <!--/ Photo -->
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Other thing</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              Photo description: bla bla bla 
             </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
           </div>
 
         </div>
@@ -276,21 +241,9 @@
   </div>
 </section>
 
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{bla,
-  author    = {bla }  title     = {bla },
-  journal   = {bla},
-  year      = {bla},}</code></pre>
-  </div>
-</section>
-
-
 <footer class="footer">
     <center class="content">
-        This website is adapted from <a href="https://nerfies.github.io/">Nerfie</a>.
+        This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>.
     </center>
 </footer>
 

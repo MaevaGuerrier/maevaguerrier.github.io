@@ -1,5 +1,14 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
+  padding-top: 70px;
 }
 
 .subtitle {
