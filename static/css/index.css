@@ -68,6 +68,26 @@ body {
 .results-carousel video {
   margin: 0;
 }
+.env-carousel {
+  overflow: hidden;
+}
+
+.env-carousel .item {
+  margin: 10px;
+  border: 1px solid #bbb;
+  border-radius: 12px;
+  overflow: hidden;
+
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.env-carousel img {
+  object-fit: contain;
+}
 
 .robot-image {
   height: 30rem;
