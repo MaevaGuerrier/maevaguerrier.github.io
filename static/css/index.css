@@ -68,3 +68,12 @@ body {
 .results-carousel video {
   margin: 0;
 }
+
+.robot-image {
+  height: 30rem;
+  transition: transform 0.2s ease;
+}
+
+.robot-image:hover {
+  transform: scale(1.08);
+}
