@@ -7,7 +7,7 @@
     <meta name="keywords" content="to do">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Maeva Guerrier</title>
-
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -240,42 +240,81 @@
   </div>
 </section>
 
+<!-- My three main envs -->
 
-<!-- Robots Used. -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="content has-text-centered">
-      <h2 class="title is-3">Robots Used</h2>
-      
-      <!-- is-vcentered aligns columns vertically; is-variable is-4 creates equal spacing -->
-      <div class="columns is-centered is-vcentered is-variable is-4">
-        
-        <div class="column is-4 has-text-centered">
-          <h3 class="title is-4">Bunker - Rover</h3>
-          <figure class="image">
-            <img class="robot-image" src="../static/images/bunker.png" alt="Bunker Rover" style="margin: 0 auto; max-height: 200px; width: auto;">
-          </figure>
-        </div>
 
-        <div class="column is-4 has-text-centered">
-          <h3 class="title is-4">G1 - Humanoid</h3>
-          <figure class="image">
-            <img class="robot-image" src="../static/images/g1_robot.svg" alt="G1 Humanoid" style="margin: 0 auto; max-height: 200px; width: auto;">
-          </figure>
-        </div>
+    <!-- Section Title -->
+    <div class="has-text-centered" style="margin-bottom: 2.5rem;">
+      <h2 class="title is-2">Meet the environments</h2>
+    </div>
 
-        <div class="column is-4 has-text-centered">
-          <h3 class="title is-4">Spot - Quadruped</h3>
-          <figure class="image">
-            <img class="robot-image" src="../static/images/spot.png" alt="Spot Quadruped" style="margin: 0 auto; max-height: 200px; width: auto;">
-          </figure>
-        </div>
+    <!-- Three GLB Columns -->
+    <div class="columns is-centered is-variable is-4">
 
+      <!-- Column 1 -->
+      <div class="column is-4 has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 0.5rem;"><em>Outdoor</em></h3>
+        <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 1rem; text-align: justify;">
+          Environment with natural lighting, grass, bushes and open spaces.
+        </p>
+        <model-viewer
+          src="../static/glb/outdoor.glb"
+          alt="3D model 1"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="0deg 75deg 60%"
+          shadow-intensity="1"
+          exposure="1"
+          style="width: 100%; height: 300px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); background-color: #f5f5f5;">
+        </model-viewer>
       </div>
+
+      <!-- Column 2 -->
+      <div class="column is-4 has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 0.5rem;"><em>Forest</em></h3>
+        <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 1rem; text-align: justify;">
+          Environment with trees, bushes, and uneven terrain.
+        </p>
+        <model-viewer
+          src="../static/glb/forest_1.glb"
+          alt="3D model 2"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="0deg 75deg 60%"
+          shadow-intensity="1"
+          exposure="1"
+          style="width: 100%; height: 300px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); background-color: #f5f5f5;">
+        </model-viewer>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="column is-4 has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 0.5rem;"><em>Office-Lab</em></h3>
+        <p style="color: #4a4a4a; line-height: 1.6; margin-bottom: 1rem; text-align: justify;">
+          Environment with a complex layout and multiple obstacles.
+        </p>
+        <model-viewer
+          src="../static/glb/office_lab_corl.glb"
+          alt="3D model 3"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="0deg 75deg 60%"
+          shadow-intensity="1"
+          exposure="1"
+          style="width: 100%; height: 300px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); background-color: #f5f5f5;">
+        </model-viewer>
+      </div>
+
     </div>
   </div>
 </section>
-<!--/ Robots Used. -->
+
+<!-- /My three main envs -->
 
 
 
@@ -419,7 +458,7 @@
     <div class="columns is-centered is-vcentered is-variable is-6">
       
       <!-- Left Column: Vertical Video -->
-      <div class="column is-4">
+      <div class="column is-3">
         <figure class="image" style="max-width: 320px; margin: 0 auto;">
           <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
             <source src="../static/videos/vista_drone.mp4" type="video/mp4">
@@ -429,8 +468,8 @@
         </figure>
       </div>
 
-      <!-- Right Column: Text + Embedded Image -->
-      <div class="column is-8">
+      <!-- Middle Column: Text + Embedded Image -->
+      <div class="column is-6">
         <div class="content">
           <h3 class="title is-4" style="margin-bottom: 0.75rem;">Unseen Environment, Unseen Input Modality</h3>
           
@@ -459,6 +498,21 @@
         </div>
       </div>
 
+      <!-- Right Column: GLB Viewer -->
+      <div class="column is-3">
+        <model-viewer
+          src="../static/glb/arena_workshop.glb"
+          alt="3D model of the arena environment"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="0deg 75deg 60%"
+          shadow-intensity="1"
+          exposure="1"
+          style="width: 100%; height: 100%; min-height: 450px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); background-color: #f5f5f5;">
+        </model-viewer>
+      </div>
+
     </div>
 
   </div>
@@ -467,8 +521,95 @@
 <!-- /Drone -->
 
 
+<!-- sharpturn -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Section Title -->
+    <h2 class="title is-2 has-text-centered" style="margin-bottom: 1rem;">
+      Demo of Table 3: Robustness to deployment step size
+    </h2>
+
+    <!-- Description -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <p class="content has-text-justified" style="color: #555; font-size: 0.95rem; line-height: 1.5;">
+          This experiments test VISTA and the other baselines on a sharp turn trajectory. 
+          The robot is required to make a 90 degree turn in a tight space. 
+        </p>
+      </div>
+    </div>
+
+    <!-- Video (left) + GLB viewer (right) -->
+    <div class="columns is-centered is-variable is-6" style="margin-top: 1.5rem;">
+
+      <!-- Left Column: Video -->
+      <div class="column is-6">
+        <figure class="image">
+          <video autoplay loop muted playsinline style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <source src="../static/videos/sharpturn_vista.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+
+      <!-- Right Column: GLB Viewer -->
+      <div class="column is-6">
+        <model-viewer
+          src="../static/glb/sharpturn.glb"
+          alt="3D model"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          camera-orbit="0deg 75deg 60%"
+          shadow-intensity="1"
+          exposure="1"
+          style="width: 100%; height: 100%; min-height: 250px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background-color: #f5f5f5;">
+        </model-viewer>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- /sharpturn -->
 
 
+<!-- Robots Used. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Robots Used</h2>
+      
+      <!-- is-vcentered aligns columns vertically; is-variable is-4 creates equal spacing -->
+      <div class="columns is-centered is-vcentered is-variable is-4">
+        
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">Bunker - Rover</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/bunker.png" alt="Bunker Rover" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">G1 - Humanoid</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/g1_robot.svg" alt="G1 Humanoid" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">Spot - Quadruped</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/spot.png" alt="Spot Quadruped" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Robots Used. -->
 
 
 <!-- CITATION HERE -->

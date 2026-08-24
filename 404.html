@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work in Progress | Stand By!</title>
+  
+  <!-- Bulma CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: #fafafa;
+    }
+    .wip-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .wip-image {
+      max-height: 320px;
+      width: auto;
+      margin: 1.5rem auto;
+      border-radius: 8px;
+    }
+    .status-badge {
+      display: inline-block;
+      background-color: #ffe08a;
+      color: #946c00;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        
+        <div class="wip-card">
+          <!-- Status Pill -->
+          <div class="status-badge">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Under Active Construction
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="title is-2 style-title" style="color: #222;">
+            That's all folks!
+          </h1>
+          
+          <h2 class="subtitle is-5 has-text-grey mt-2">
+            Our robots are currently lost in the latent space trying to compile this page.
+          </h2>
+
+          <!-- Funny Center Image -->
+          <figure class="image is-inline-block">
+            <!-- Replace image path with your meme/picture -->
+            <img class="wip-image" 
+                 src="static/images/g1_on_ground.jpg" 
+                 alt="Robot crashing into a wall" />
+          </figure>
+
+          <!-- Funny Description -->
+          <div class="content mt-4" style="color: #4a4a4a; line-height: 1.6;">
+            <p>
+              I tried letting my robot write the HTML, but it decided to take a nap instead. 
+              Check back soon, I am currently working on it, and refueling on coffee.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
