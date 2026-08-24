@@ -75,10 +75,7 @@
             </a>
             <div class="navbar-dropdown">
             <a class="navbar-item" href="o">
-                bla bla
-            </a>
-            <a class="navbar-item" href="">
-                bla
+                WIP
             </a>
             </div>
         </div>
@@ -118,16 +115,6 @@
                     <span>Paper</span>
                     </a>
                 </span>
-                <!-- Code Link. -->
-                <!-- <span class="link-block">
-                    <a href="todo"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span> -->
                 <!-- Dataset Link. -->
                 <span class="link-block">
                     <a href="todo"
@@ -174,28 +161,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Safety stands as the primary obstacle preventing
-            the widespread adoption of learning-based robotic systems
-            in our daily lives. While reinforcement learning (RL) shows
-            promise as an effective robot learning paradigm, conventional
-            RL frameworks often model safety by using single scalar
-            negative rewards with immediate episode termination, failing
-            to capture the temporal consequences of unsafe actions (e.g.,
-            sustained collision damage). In this work, we introduce a novel
-            approach that simulates these temporal effects by applying
-            continuous negative rewards without episode termination. Our
-            experiments reveal that standard RL methods struggle with
-            this model, as the accumulated negative values in unsafe
-            zones create learning barriers. To address this challenge, we
-            demonstrate how Control Barrier Functions (CBFs), with their
-            proven safety guarantees, effectively help robots avoid 
-            catastrophic regions while enhancing learning outcomes. We present
-            three CBF-based approaches, each integrating traditional RL
-            methods with Control Barrier Functions, guiding the agent
-            to learn safe behavior. Our empirical analysis, conducted in
-            both simulated environments and real-world settings using a
-            four-wheel differential drive robot, explores the possibilities of
-            employing these approaches for safe robotic learning.
+            Vision Navigation Foundation Models (VNMs) promise end-to-end learned navigation 
+            policies capable of zero-shot deployment across diverse embodiments and environments. 
+            To maintain generality, many vision-based navigation models predict normalized actions. 
+            However, this normalization introduces a critical deployment vulnerability: applying different 
+            scaling factors to the same normalized trajectory alters its physical geometry, which degrades 
+            navigation performance and increases collision risks. We address this vulnerability by conditioning 
+            the model on normalized action histories alongside image observations, providing explicit context on 
+            the relationship between the model's predictions and the robot's actual physical displacement. 
+            Furthermore, current VNMs often struggle in visually repetitive environments that lack distinct features. 
+            To resolve this issue, we integrate a DINOv3 encoder, whose richer representations enable our model to 
+            capture both spatial and geometric dimensions between observations. VISTA generalizes robustly to 
+            out-of-distribution environments, achieving 100% goal prediction accuracy in zero-shot, 
+            real-world deployment in Outdoor, Forest and Office settings, and an average of 95% checkpoints crossed, 
+            demonstrating consistent path following in unseen environments.
 
           </p>
         </div>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+            content="to do">
+    <meta name="keywords" content="to do">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maeva Guerrier</title>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+        dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/bulma-carousel.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    </head>
+    <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://maevaguerrier.github.io">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            Papers
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="./zero-shot-eval.html">
+                Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned
+              </a>
+              <a class="navbar-item" href="./control-barrier-safety-instructions.html">
+                Guided by Guardrails: Control Barrier Functions as Safety Instructors for Robotic Learning
+              </a>
+              <a class="navbar-item" href="./learning-control-barrier-survey.html">
+                Learning Control Barrier Functions and their application in Reinforcement Learning: A Survey
+              </a>
+              <a class="navbar-item" href="./vista.html">
+                VISTA: Scale-Aware Visual Navigation via Action History Conditioning
+              </a>
+            </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+            Other
+            </a>
+            <div class="navbar-dropdown">
+            <a class="navbar-item" href="o">
+                WIP
+            </a>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </nav>
+
+    <section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+
+            <style>
+              .centered-image {
+                display: block;
+                margin: 1.5rem auto; /* Horizontally centers block element and adds spacing */
+                max-width: 100%;     /* Prevents image from overflowing container */
+                height: auto;        /* Preserves intrinsic aspect ratio */
+              }
+            </style>
+
+            <div class="column has-text-centered">
+                <h1 class="title is-2 publication-title">VISTA: Scale-Aware Visual Navigation via Action History Conditioning</h1>
+
+                        <img class="centered-image" src="../static/images/vista_overview_w.png" alt="Centered Picture">
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ&hl=en&oi=ao">Maeva Guerrier</a><sup>1,2,*</sup>,</span>
+                            <span class="author-block">
+                                <a href="">Koki Kobayashi</a><sup>3, *</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.ca/citations?user=Ltu98iQAAAAJ&hl=fr">Simon Roy</a><sup>1,2</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.ca/citations?hl=en&user=yJS-u7IAAAAJ">Jana Pavlasek</a><sup>1,2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.ca/citations?hl=en&user=TVHJJ9wAAAAJ">Giovanni Beltrame</a><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>*</sup>Equal contribution,</span>
+                            <span class="author-block"><sup>1</sup>Polytechnique Montréal,</span>
+                            <span class="author-block"><sup>2</sup>Mila - Quebec AI Institute,</span>
+                            <span class="author-block"><sup>3</sup>Institute of Science Tokyo</span>
+                        </div>
+
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- Paper Link. -->
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2606.17294"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                    </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                    <a href="https://github.com/MaevaGuerrier/VISTA"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!-- BibTex. -->
+                <span class="link-block">
+                    <a href="../static/bibtex/vista.bib"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-quote-left"></i>
+                    </span>
+                    <span>BibTex</span>
+                    </a>
+                </span>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<div class="is-flex is-justify-content-center is-align-items-center" style="gap: 20px; width: 100%; max-width: 600px; margin: 0 auto;">
+  <div style="flex: 1; text-align: center;">
+    <img src="../static/images/poly_logo_w.png" alt="Polytechnique Montréal Logo" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="../static/images/mila_logo.svg" alt="Mila Logo" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="../static/images/institue_science_tokyo.png" alt="Institute of Science Tokyo Logo" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+  </div>
+</div>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Visual Navigation Models (VNMs) promise generalizable, robot navigation by learning 
+            from large-scale visual demonstrations. Despite growing real-world deployment, existing 
+            evaluations rely almost exclusively on success rate, whether the robot reaches its goal, 
+            which conceals trajectory quality, collision behavior, and robustness to environmental 
+            change. We present a real-world evaluation of five state-of-the-art VNMs (GNM, ViNT, NoMaD, 
+            NaviBridger, and CrossFormer) across two robot platforms and five environments spanning indoor 
+            and outdoor settings. Beyond success rate, we combine path-based metrics with vision-based 
+            goal-recognition scores and assess robustness through controlled image perturbations (motion blur, 
+            sunflare). Our analysis uncovers three systematic limitations: (a) even architecturally sophisticated 
+            diffusion and transformer-based models exhibit frequent collisions, indicating limited geometric 
+            understanding; (b) models fail to discriminate between different locations that are perceptually 
+            similar, however some semantics differences are present, causing goal prediction errors in 
+            repetitive environments; and (c) performance degrades under distribution shift. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- is-mobile forces columns to stay side-by-side on all screen sizes -->
+      <div class="columns is-mobile is-vcentered is-variable is-2">
+        
+        <div class="column is-4">
+          <figure class="image">
+            <img src="../static/videos/bunker_timelapse_VISTA.webp" alt="timelaspe_bunker" style="width: 100%; height: auto; object-fit: cover;">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image">
+            <img src="../static/videos/cut_canva_spot_timelapse_VISTA.webp" alt="timelapse_spot" style="width: 100%; height: auto; object-fit: cover;">
+          </figure>
+        </div>
+
+        <div class="column is-4">
+          <figure class="image">
+            <img src="../static/videos/cut_canva_G1_timelapse_VISTA.webp" alt="timelapse_G1" style="width: 100%; height: auto; object-fit: cover;">
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Robots Used. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <h2 class="title is-3">Robots Used</h2>
+      
+      <!-- is-vcentered aligns columns vertically; is-variable is-4 creates equal spacing -->
+      <div class="columns is-centered is-vcentered is-variable is-4">
+        
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">Bunker - Rover</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/bunker.png" alt="Bunker Rover" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">G1 - Humanoid</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/g1_robot.svg" alt="G1 Humanoid" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-4">Spot - Quadruped</h3>
+          <figure class="image">
+            <img class="robot-image" src="../static/images/spot.png" alt="Spot Quadruped" style="margin: 0 auto; max-height: 200px; width: auto;">
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Robots Used. -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">VISTA in action!</h2>
+
+    <div id="results-carousel" class="carousel results-carousel">
+
+      <div class="item">
+        <video poster="" id="video1" autoplay muted playsinline height="100%">
+          <source src="../static/videos/bunk_loop1.mp4" type="video/mp4">
+        </video>
+        <h2 class="has-text-centered">Outdoor</h2>
+      </div>
+
+      <div class="item">
+        <video poster="" id="video2" autoplay muted playsinline height="100%">
+          <source src="../static/videos/bunker_forest.mp4" type="video/mp4">
+        </video>
+        <h2 class="has-text-centered">Forest</h2>
+      </div>
+
+      <div class="item">
+        <video poster="" id="video3" autoplay muted playsinline height="100%">
+          <source src="../static/videos/g1_loop.mp4" type="video/mp4">
+        </video>
+        <h2 class="has-text-centered">Office</h2>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Section Emergent behaviour -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <!-- Section Title -->
+    <h2 class="title is-2 has-text-centered" style="margin-bottom: 2rem;">
+      Emergent Behaviors
+    </h2>
+
+    <!-- Two-Column Layout -->
+    <div class="columns is-centered is-variable is-6">
+      
+      <!-- Left Column -->
+      <div class="column is-6">
+        <h3 class="title is-4 has-text-centered" style="color: #363636;">
+          Halting behavior
+        </h3>
+        <p class="content has-text-justified" style="color: #555; font-size: 0.95rem; line-height: 1.5; min-height: 80px;">
+          In this experiment, we probe VISTA's robustness against strong changes in the environment. Previously, the door was open, 
+          allowing VISTA to follow the path and exit into the corridor. In this case, however, the door is closed for 20 seconds, 
+          preventing VISTA from exiting the room.
+        </p>
+        <figure class="image">
+          <img src="../static/videos/ros_topo_pertur.webp" alt="ros_topo_pertur"
+               style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </figure>
+      </div>
+
+      <!-- Right Column -->
+      <div class="column is-6">
+        <h3 class="title is-4 has-text-centered" style="color: #363636;">
+          Robust to environment changes
+        </h3>
+        <p class="content has-text-justified" style="color: #555; font-size: 0.95rem; line-height: 1.5; min-height: 80px;">
+          Yet VISTA does not collide with the door. Thanks to the strong representations enabled by DINOv3 and the grounding provided by Action History, 
+          VISTA progressively slows down, comes to a halt, and tries to align its current observation with the sub-goal image.
+        </p>
+        <figure class="image">
+          <img src="../static/videos/camview_topo_pertur.webp" alt="ros_topo_pertur"
+               style="width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- /Section Emergent behaviour -->
+
+<!-- Navigating tight spaces -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <!-- Title & Paragraph Header -->
+    <div class="has-text-centered" style="margin-bottom: 2.5rem;">
+      <h2 class="title is-2">Navigates Tight Spaces</h2>
+      <p class="content is-size-5" style="max-width: 750px; margin: 0 auto; color: #4a4a4a;">
+        VISTA is able to navigate tight spaces in unseen environments. By combining DINOv3 with Action History, 
+        VISTA closely follows the intended trajectory and successfully grounds its predicted trajectory into 
+        real-world scale, enabling collision avoidance in tight spaces.
+      </p>
+    </div>
+
+    <!-- Centered Video (Left) and Image (Right) Grid -->
+    <div class="columns is-centered is-vcentered is-variable is-5">
+      
+      <!-- Video (Left) - Slightly scaled/shifted to match visual weight -->
+      <div class="column is-6">
+        <figure class="image">
+          <img src="../static/videos/vint_vs_vista.webp" alt="vint_vs_vint"
+               style="width: 90%; margin-left: auto; display: block; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </figure>
+      </div>
+
+      <!-- Image (Right) - Centered in its column -->
+      <div class="column is-6">
+        <figure class="image">
+          <img src="../static/images/Bunker_door_tight_space_showcase.jpg" alt="Overview diagram" 
+               style="width: 60%; margin: 0 auto; display: block; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </figure>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- /Navigating tight spaces -->
+
+
+
+<!-- Drone -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <!-- Section Title -->
+    <div class="has-text-centered" style="margin-bottom: 2.5rem;">
+      <h2 class="title is-2">Crazyflie: Zero-Shot Deployment Under Distribution Shift</h2>
+    </div>
+
+    <!-- Layout Container -->
+    <div class="columns is-centered is-vcentered is-variable is-6">
+      
+      <!-- Left Column: Vertical Video -->
+      <div class="column is-4">
+        <figure class="image" style="max-width: 320px; margin: 0 auto;">
+          <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+            <source src="../static/videos/vista_drone.mp4" type="video/mp4">
+            <!-- Fallback for WebP -->
+            <!-- <img src="../static/videos/vertical_demo.webp" alt="Vertical demonstration clip" style="width: 100%; border-radius: 8px;"> -->
+          </video>
+        </figure>
+      </div>
+
+      <!-- Right Column: Text + Embedded Image -->
+      <div class="column is-8">
+        <div class="content">
+          <h3 class="title is-4" style="margin-bottom: 0.75rem;">Unseen Environment, Unseen Input Modality</h3>
+          
+          <p style="color: #4a4a4a; line-height: 1.6;">
+            We tested VISTA on a crazyfly drone in a workshop-like setting we refer to as the arena. 
+            This setting contains a center workshop table, an open small arena without obstacles, a net, and desks and drawers on the sides.
+          </p>
+
+          <!-- Inline/Embedded Picture -->
+          <div class="my-4" style="text-align: center;">
+            <figure class="image is-inline-block" style="max-width: 80%;">
+              <img src="../static/images/drone_arena_BW.png" alt="Embedded explanation diagram" 
+                   style="border-radius: 6px; border: 1px solid #eee; box-shadow: 0 2px 6px rgba(0,0,0,0.06);">
+              <figcaption class="has-text-grey is-size-7 mt-1">
+                Figure 1: VISTA deployment on a Crazyflie drone in the arena environment, illustrating distribution shift along two axes: 
+                unseen black-and-white input images and an unseen environment.
+              </figcaption>
+            </figure>
+          </div>
+
+          <p style="color: #4a4a4a; line-height: 1.6;">
+            This experiment tests the robustness of VISTA against unseen modality: black and white images with a very small image resolution. 
+            VISTA has never seen this modality during training, as the training dataset is composed of RGB images only. 
+            Also, the deployment setting is unseen as well. 
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- /Drone -->
+
+
+
+
+
+
+<!-- CITATION HERE -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{guerrier2026vistascaleawarevisualnavigation,
+      title={VISTA: Scale-Aware Visual Navigation via Action History Conditioning}, 
+      author={Maeva Guerrier and Koki Kobayashi and Simon Roy and Jana Pavlasek and Giovanni Beltrame},
+      year={2026},
+      eprint={2606.17294},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2606.17294}, 
+}</code></pre>
+  </div>
+</section>
+<!-- /CITATION HERE -->
+
+
+
+
+
+
+<footer class="footer">
+    <center class="content">
+        This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>.
+    </center>
+</footer>
+
+</body>
+</html>
