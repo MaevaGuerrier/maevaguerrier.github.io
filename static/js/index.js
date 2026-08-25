@@ -2,7 +2,7 @@ window.HELP_IMPROVE_VIDEOJS = false;
 
 $(document).ready(function() {
     // Toggle mobile navbar menu
-    $(".navbar-burger").click(function() {
+    $(document).on("click", ".navbar-burger", function() {
       $(".navbar-burger").toggleClass("is-active");
       $(".navbar-menu").toggleClass("is-active");
     });
