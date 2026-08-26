@@ -2,258 +2,551 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-            content="to do">
-    <meta name="keywords" content="to do">
+    <meta name="description" content="Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned">
+    <meta name="keywords" content="Robotics, Visual Navigation Models, VNM, Autonomous Navigation">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maeva Guerrier</title>
+    <title>Can Vision Foundation Models Navigate?</title>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-        dataLayer.push(arguments);
-        }
-
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-PYVRSFMDRL');
     </script>
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-            rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/bulma.min.css">
     <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="../static/css/index.css">
 
-    <!-- Navigation Bar -->
     <div id="navbar-placeholder"></div>
     <script src="/static/js/nav-loader.js"></script>
-    <!-- /Navigation Bar -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="../static/js/fontawesome.all.min.js"></script>
     <script src="../static/js/bulma-carousel.min.js"></script>
     <script src="../static/js/index.js"></script>
-    </head>
-    <body>
+</head>
+<body>
 
-
-    <section class="hero">
+  <section class="hero py-5">
     <div class="hero-body">
-        <div class="container is-max-desktop">
+      <div class="container is-max-desktop">
         <div class="columns is-centered">
-            <div class="column has-text-centered">
-                <h1 class="title is-2 publication-title">Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned</h1>
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">
-                                <a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ&hl=en&oi=ao">Maeva Guerrier</a>,</span>
-                            <span class="author-block">
-                                <a href="https://scholar.google.ca/citations?hl=en&user=eJ5jLXoAAAAJ"> Karthik Soma</a>,</span>
-                            <span class="author-block">
-                                <a href="https://scholar.google.ca/citations?hl=en&user=yJS-u7IAAAAJ">Jana Pavlasek</a>,
-                            </span>
-                            <span class="author-block">
-                                <a href="https://scholar.google.ca/citations?hl=en&user=TVHJJ9wAAAAJ">Giovanni Beltrame</a>
-                            </span>
-
-            <div class="column has-text-centered">
-                <div class="publication-links">
-                <!-- Paper Link. -->
-                <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2603.25937"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                    </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                    <a href="https://github.com/MaevaGuerrier/vnm-zeroshot-eval"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span>
-                <!-- Dataset Link. -->
-                <span class="link-block">
-                    <a href=""
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="far fa-images"></i>
-                    </span>
-                    <span>Data</span>
-                    </a>
-                </span>
-                <!-- BibTex. -->
-                <span class="link-block">
-                    <a href="../static/bibtex/zero-shot-eval.bib"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fas fa-quote-left"></i>
-                    </span>
-                    <span>BibTex</span>
-                    </a>
-                </span>
-                </div>
-
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title mb-4">
+              Can Vision Foundation Models Navigate?<br>
+              <span class="is-size-3 has-text-weight-normal has-text-grey-dark">Zero-Shot Real-World Evaluation and Lessons Learned</span>
+            </h1>
+            
+            <div class="is-size-5 publication-authors mb-4">
+              <span class="author-block"><a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ&hl=en&oi=ao">Maeva Guerrier</a><sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.ca/citations?hl=en&user=eJ5jLXoAAAAJ">Karthik Soma</a><sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.ca/citations?hl=en&user=yJS-u7IAAAAJ">Jana Pavlasek</a><sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.ca/citations?hl=en&user=TVHJJ9wAAAAJ">Giovanni Beltrame</a><sup>1,2</sup></span>
             </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container is-centered">
-      <div class="has-text-centered">
-        <img src="../static/images/vnm_diagram.gif">
+            <div class="is-size-6 publication-authors">
+                <span class="author-block"><sup>1</sup>Polytechnique Montréal,</span>
+                <span class="author-block"><sup>2</sup>Mila - Quebec AI Institute,</span>
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2603.25937" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/MaevaGuerrier/vnm-zeroshot-eval" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="far fa-images"></i></span>
+                  <span>WIP Data</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-quote-left"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+<div class="is-flex is-justify-content-center is-align-items-center" style="gap: 20px; width: 100%; max-width: 600px; margin: 0 auto;">
+  <div style="flex: 1; text-align: center;">
+    <img src="../static/images/poly_logo_w.png" alt="Polytechnique Montréal Logo" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
   </div>
-</section>
+  <div style="flex: 1; text-align: center;">
+    <img src="../static/images/mila_logo.svg" alt="Mila Logo" style="width: 100%; height: auto; max-height: 80px; object-fit: contain;">
+  </div>
+</div>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+  <section class="section py-4">
+    <div class="container is-fullhd">
+      <div class="box p-3" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+        <figure class="image has-text-centered">
+          <img src="../static/images/vnm_diagram.gif" alt="VNM Evaluation Diagram" style="max-height: 480px; width: auto; margin: 0 auto; border-radius: 8px;">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section py-5">
+    <div class="container is-max-desktop">
+      <div class="box p-5" style="border-radius: 12px; background-color: #fafafa;">
+        <h2 class="title is-3 has-text-centered mb-4">Abstract</h2>
+        <div class="content has-text-justified" style="line-height: 1.7; color: #363636;">
           <p>
-            Visual Navigation Models (VNMs) promise generalizable, robot navigation by learning 
-            from large-scale visual demonstrations. Despite growing real-world deployment, existing 
-            evaluations rely almost exclusively on success rate, whether the robot reaches its goal, 
-            which conceals trajectory quality, collision behavior, and robustness to environmental 
-            change. We present a real-world evaluation of five state-of-the-art VNMs (GNM, ViNT, NoMaD, 
-            NaviBridger, and CrossFormer) across two robot platforms and five environments spanning indoor 
-            and outdoor settings. Beyond success rate, we combine path-based metrics with vision-based 
-            goal-recognition scores and assess robustness through controlled image perturbations (motion blur, 
-            sunflare). Our analysis uncovers three systematic limitations: (a) even architecturally sophisticated 
-            diffusion and transformer-based models exhibit frequent collisions, indicating limited geometric 
-            understanding; (b) models fail to discriminate between different locations that are perceptually 
-            similar, however some semantics differences are present, causing goal prediction errors in 
-            repetitive environments; and (c) performance degrades under distribution shift. We will publicly 
-            release our evaluation codebase and dataset to facilitate reproducible benchmarking of VNMs
+            Visual Navigation Models (VNMs) promise generalizable, robot navigation by learning from large-scale visual demonstrations. Despite growing real-world deployment, existing evaluations rely almost exclusively on success rate, whether the robot reaches its goal, which conceals trajectory quality, collision behavior, and robustness to environmental change.
+          </p>
+          <p>
+            We present a real-world evaluation of five state-of-the-art VNMs (GNM, ViNT, NoMaD, NaviBridger, and CrossFormer) across two robot platforms and five environments spanning indoor and outdoor settings. Beyond success rate, we combine path-based metrics with vision-based goal-recognition scores and assess robustness through controlled image perturbations (motion blur, sunflare).
+          </p>
+          <p>
+            Our analysis uncovers three systematic limitations: 
+            <strong>(a)</strong> even architecturally sophisticated diffusion and transformer-based models exhibit frequent collisions, indicating limited geometric understanding; 
+            <strong>(b)</strong> models fail to discriminate between different locations that are perceptually similar, causing goal prediction errors in repetitive environments; and 
+            <strong>(c)</strong> performance degrades under distribution shift. 
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
+  </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container is-centered">
-      <div class="has-text-centered">
-        <img src="../static/images/vnm_pitch_fig.png">
+  <section class="section py-4">
+    <div class="container is-fullhd">
+      <div class="box p-4" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+        <figure class="image has-text-centered">
+          <img src="../static/images/vnm_pitch_fig.png" alt="VNM Overview Pitch" style="max-height: 520px; width: auto; margin: 0 auto;">
+        </figure>
       </div>
+    </div>
+  </section>
+
+
+<section class="section py-6">
+  <div class="container is-fullhd">
+    
+    <!-- KEY FINDINGS SECTION -->
+    <div class="box p-5 mb-6" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #eef0f2;">
+      <h2 class="title is-3 mb-4">
+        Key Findings <span style="font-size: 1.5rem;">🔑</span>
+      </h2>
+      <p class="subtitle is-6 has-text-grey mb-5">
+        Three systematic limitations identified across all evaluated architectures:
+      </p>
+
+      <!-- 3 Key Finding Cards Grid -->
+      <div class="columns is-variable is-4 mb-5">
+        
+        <!-- Finding 1 -->
+        <div class="column is-4">
+          <div class="p-4" style="background-color: #fcfcfd; border-radius: 8px; border-left: 4px solid #3273dc; height: 100%;">
+            <h3 class="title is-6 mb-2" style="color: #2c3e50;">1. Limited Geometric Understanding</h3>
+            <p class="is-size-6" style="color: #4a4a4a; line-height: 1.5;">
+              Even diffusion and transformer-based models exhibit frequent collisions. Architectural sophistication does not guarantee safe navigation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Finding 2 -->
+        <div class="column is-4">
+          <div class="p-4" style="background-color: #fcfcfd; border-radius: 8px; border-left: 4px solid #3273dc; height: 100%;">
+            <h3 class="title is-6 mb-2" style="color: #2c3e50;">2. Goal Confusion in Repetitive Environments</h3>
+            <p class="is-size-6" style="color: #4a4a4a; line-height: 1.5;">
+              Models fail to discriminate between perceptually similar locations, causing premature or incorrect goal predictions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Finding 3 -->
+        <div class="column is-4">
+          <div class="p-4" style="background-color: #fcfcfd; border-radius: 8px; border-left: 4px solid #3273dc; height: 100%;">
+            <h3 class="title is-6 mb-2" style="color: #2c3e50;">3. Fragility Under Distribution Shift</h3>
+            <p class="is-size-6" style="color: #4a4a4a; line-height: 1.5;">
+              Performance degrades noticeably under motion blur, sunflare, and out-of-distribution environments (e.g., snow).
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Callout Box for Surprising Result -->
+      <div class="notification is-info is-light p-4" style="border-radius: 8px;">
+        <p class="is-size-6" style="color: #1d3557; line-height: 1.5;">
+          <strong>A surprising result:</strong> Simpler architectures (GNM/MobileNetV2) match complex transformer and diffusion models across several metrics, we hypothesize that data insufficiency limits the newer models more than architectural capacity.
+        </p>
+      </div>
+    </div>
+
+    <!-- MODELS EVALUATED SECTION -->
+    <div class="box p-5" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #eef0f2;">
+      <h2 class="title is-3 mb-4">Models Evaluated</h2>
+      
+      <div class="table-container">
+        <table class="table is-fullwidth is-hoverable is-striped" style="border-radius: 8px; overflow: hidden;">
+          <thead>
+            <tr style="background-color: #f8f9fa;">
+              <th style="color: #363636;">Model</th>
+              <th style="color: #363636;">Backbone</th>
+              <th style="color: #363636;">Key Feature</th>
+              <th style="color: #363636;">Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2210.03370" target="_blank" class="has-text-link has-text-weight-semibold">GNM</a></td>
+              <td><span class="tag is-light">Fully Connected</span></td>
+              <td>Shared action space</td>
+              <td>Waypoints + distance</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2306.14846" target="_blank" class="has-text-link has-text-weight-semibold">ViNT</a></td>
+              <td><span class="tag is-info is-light">Transformer</span></td>
+              <td>Goal fusion token</td>
+              <td>Waypoint + distance</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2310.07896" target="_blank" class="has-text-link has-text-weight-semibold">NoMaD</a></td>
+              <td><span class="tag is-warning is-light">Diffusion</span></td>
+              <td>Goal masking for exploration</td>
+              <td>Trajectory</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2504.10041" target="_blank" class="has-text-link has-text-weight-semibold">NaviBridger</a></td>
+              <td><span class="tag is-warning is-light">Diffusion</span></td>
+              <td>Learned action prior</td>
+              <td>Trajectory</td>
+            </tr>
+            <tr>
+              <td><a href="https://arxiv.org/abs/2408.11812" target="_blank" class="has-text-link has-text-weight-semibold">CrossFormer</a></td>
+              <td><span class="tag is-info is-light">Transformer</span></td>
+              <td>Embodiment-specific heads</td>
+              <td>Waypoint</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- Robots Used. -->
-<section class="section">
-  <div class="container is-max-desktop">
-        <div class="content">
-          <h2 class="title is-3">Robots Used</h2>
-          <div class="columns is-centered">
-            <div class="column">
-              <h2 class="title is-4">Bunker</h2>
-              <img class="robot-image" src="../static/images/bunker.png">
-            </div>
-            <div class="column">
-              <h2 class="title is-4">Spot</h2>
-                <img class="robot-image" src="../static/images/spot.png">
-            </div>
+
+  <hr class="my-6" style="background-color: #f0f0f0; height: 1px;">
+
+  <section class="section py-5">
+    <div class="container is-fullhd">
+      
+      <div class="has-text-centered mb-5">
+        <h2 class="title is-2"><em>Easy</em> Setting: Office Corridor</h2>
+        <p class="subtitle is-5 has-text-grey">Short-horizon, straight-line trajectory (3.75m, Bunker) toward a cardboard box target.</p>
+      </div>
+
+      <div class="box p-4 mb-5" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+        <div class="columns is-vcentered is-variable is-4">
+          
+          <div class="column is-6">
+            <figure class="image" style="width: 100%;">
+              <img src="../static/images/eval_succ_fail_easy_office.png" alt="Office Trajectory Evaluation" 
+                   style="width: 100%; height: auto; border-radius: 6px; border: 1px solid #eee; object-fit: contain;">
+              <figcaption class="has-text-grey mt-5 has-text-centered" style="font-size: 1.2rem; font-weight: 500;">
+                Figure 1: Green: Goal reached without collision in all trials. Red: At least one collision occurred.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="column is-4">
+            <model-viewer
+              src="../static/glb/easy_office.glb"
+              alt="3D model of easy office environment"
+              camera-controls touch-action="pan-y" auto-rotate
+              camera-orbit="0deg 75deg 60%" shadow-intensity="1" exposure="1"
+              style="width: 100%; height: 280px; border-radius: 8px; background-color: #f8f9fa;">
+            </model-viewer>
+          </div>
+
+          <div class="column is-2 has-text-centered">
+            <h3 class="title is-5 mb-2">Bunker</h3>
+            <figure class="image" style="width: 100%;">
+              <img class="robot-image" src="../static/images/bunker.png" alt="Bunker robot" 
+                   style="width: 100%; max-height: 200px; border-radius: 8px; object-fit: contain;">
+            </figure>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="box p-3" style="border-radius: 12px; border: 1px solid #f0f0f0; background-color: #fafafa;">
+        <h3 class="title is-5 mb-3 px-2">Model Run Comparisons</h3>
+        <div class="columns is-vcentered is-variable is-2">
+          <div class="column">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 6px; display: block;">
+              <source src="../static/videos/gnm_easy_office_trial_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 6px; display: block;">
+              <source src="../static/videos/vint_easy_office_trial_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 6px; display: block;">
+              <source src="../static/videos/nomad_easy_office_trial_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 6px; display: block;">
+              <source src="../static/videos/bridger_easy_office_trial_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <video autoplay controls muted loop playsinline style="width: 100%; border-radius: 6px; display: block;">
+              <source src="../static/videos/cross_easy_office_trial_1.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
-      </div>
+
     </div>
-  </div>
-</section>
-<!--/ Robots Used. -->
+  </section>
 
-<!-- Env Used. -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Environments Used</h2>
-    <img src="../static/images/vnm_env.png">
+  <hr class="my-6" style="background-color: #f0f0f0; height: 1px;">
 
-    <div id="env-carousel" class="carousel env-carousel hero-body">
-      <div class="item">
-        <figure class="image">
-          <img src="../static/images/env_gif/office_loop.gif" alt="Office loop">
-        </figure>
+  <section class="section py-5">
+    <div class="container is-fullhd">
+      
+      <div class="has-text-centered mb-5">
+        <h2 class="title is-2">Partial Demonstration: Office Loop</h2>
+        <p class="subtitle is-5 has-text-grey">Full office loop trajectory (27.96m, Bunker) with desks, chairs, and repetitive features.</p>
       </div>
-      <div class="item">
-        <figure class="image">
-          <img src="../static/images/env_gif/corridor.gif" alt="Corridor">
-        </figure>
+
+      <div class="columns is-variable is-6">
+        
+        <div class="column is-6">
+          <div class="sticky-video-wrapper" style="position: sticky; top: 2rem;">
+            <div class="box p-2" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
+              <video id="main-video" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px; display: block;">
+                <source src="../static/videos/bunker_loop_showcase.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div style="display: flex; flex-direction: column; gap: 2rem; padding-bottom: 2rem;">
+            
+            <div class="box step-card reveal-on-scroll" style="border-radius: 10px; opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; border: 1px solid #f0f0f0;">
+              <span class="tag is-info is-light mb-2">Note 1</span>
+              <h3 class="title is-4">Initial Starting point is also the end point</h3>
+              <p class="content" style="color: #4a4a4a; line-height: 1.6;">
+                The robot needs to achieves a loop around the office, without colliding with any obstacles (chairs, desks, pillars).
+              </p>
+            </div>
+
+            <div class="box step-card reveal-on-scroll" style="border-radius: 10px; opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; border: 1px solid #f0f0f0;">
+              <span class="tag is-info is-light mb-2">Note 2</span>
+              <h3 class="title is-4">Obstacle Avoidance & Alignment</h3>
+              <p class="content" style="color: #4a4a4a; line-height: 1.6;">
+                As the navigation model processes real-time camera inputs, it needs to closely match the reference 
+                path to avoid obstacles. We hypothesize that VNMs are learning to match their current 
+                observation with the sub-goal/goal image, but they can struggle to generalize to new viewpoints
+                and lighting conditions, leading to collisions or misalignment with the path.
+              </p>
+            </div>
+
+            <div class="box step-card reveal-on-scroll" style="border-radius: 10px; opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; border: 1px solid #f0f0f0;">
+              <span class="tag is-info is-light mb-2">Note 3</span>
+              <h3 class="title is-4">Final Goal Reached?</h3>
+              <p class="content" style="color: #4a4a4a; line-height: 1.6;">
+               In our evaluation, the models sometimes collided along their path or incorrectly reported reaching the goal. 
+               While some did manage to complete the route on occasion, these failures show that current VNMs aren't quite 
+               ready for reliable real-world navigation and need stronger robustness and generalization.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      <div class="item">
-        <figure class="image">
-          <img src="../static/images/env_gif/snow.gif" alt="Snow">
-        </figure>
-      </div>
-      <div class="item">
-        <figure class="image">
-          <img src="../static/images/env_gif/stairs.gif" alt="Stairs">
-        </figure>
-      </div>
-      <div class="item">
-        <figure class="image">
-          <img src="../static/images/env_gif/arena.gif" alt="Arena">
-        </figure>
-      </div>
+
     </div>
-  </div>
-</section>
-<!--/ Env Used. -->
+  </section>
 
-<!-- Models Used. -->
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop is-centered">
-      <h2 class="title is-3">Models Used</h2>
-      <div class="has-text-centered">
-        <img src="../static/images/models.png" style="height: 250px;">
+  <hr class="my-6" style="background-color: #f0f0f0; height: 1px;">
+
+  <section class="section py-5">
+    <div class="container is-fullhd">
+      
+      <div class="has-text-centered mb-5">
+        <h2 class="title is-2">Climbing Stairs</h2>
+        <p class="subtitle is-5 has-text-grey">Evaluating the models against visual ambiguities, with two identical staircases.</p>
       </div>
-  </div>
-</section>
-<!--/ Models Used. -->
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{guerrier2026visionfoundationmodelsnavigate,
+      <div class="box p-4" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+        
+        <div class="columns is-vcentered is-variable is-4 mb-4">
+          <div class="column is-4">
+            <video autoplay loop muted playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+              <source src="../static/videos/Spot_stairs.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-8">
+            <figure class="image" style="width: 100%;">
+              <img src="../static/images/spot_stair_mesh.png" alt="Stairs mesh diagram" 
+                   style="width: 100%; border-radius: 6px; border: 1px solid #eee; object-fit: contain;">
+              <figcaption class="has-text-grey mt-5 has-text-centered" style="font-size: 1.2rem; font-weight: 500;">
+                Figure 2: Stair trajectories for GNM, ViNT, NoMaD, and NaviBridger overlaid with reference path.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="columns is-vcentered is-variable is-4">
+          <div class="column is-8">
+            <model-viewer
+              src="../static/glb/stairs.glb"
+              alt="3D model of stairs environment"
+              camera-controls touch-action="pan-y" auto-rotate
+              camera-orbit="0deg 75deg 60%" shadow-intensity="1" exposure="1"
+              style="width: 100%; height: 300px; border-radius: 8px; background-color: #f8f9fa;">
+            </model-viewer>
+          </div>
+          <div class="column is-4 has-text-centered">
+            <h3 class="title is-5 mb-2">Spot Platform</h3>
+            <figure class="image" style="width: 100%; max-width: 220px; margin: 0 auto;">
+              <img class="robot-image" src="../static/images/spot.png" alt="Spot robot" style="border-radius: 8px; width: 100%;">
+            </figure>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="my-6" style="background-color: #f0f0f0; height: 1px;">
+
+  <section class="section py-5">
+    <div class="container is-fullhd">
+      
+      <div class="has-text-centered mb-5">
+        <h2 class="title is-2">Into the Cold: Outdoor Snow</h2>
+        <p class="subtitle is-5 has-text-grey">Testing VNM robustness against severe visual distributional shifts.</p>
+      </div>
+
+      <div class="columns is-vcentered is-variable is-4">
+        
+        <div class="column is-7">
+          <div class="box p-3" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+            <h3 class="title is-5 mb-3 px-2">Snow Trajectory Runs</h3>
+            
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-steve">
+                <video id="steve" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px; display: block;">
+                  <source src="../static/videos/gnm_out_snow_trial_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-chair-tp">
+                <video id="chair-tp" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px; display: block;">
+                  <source src="../static/videos/vint_out_snow_trial_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-shiba">
+                <video id="shiba" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px; display: block;">
+                  <source src="../static/videos/nomad_out_snow_trial_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-fullbody">
+                <video id="fullbody" autoplay controls muted loop playsinline style="width: 100%; border-radius: 8px; display: block;">
+                  <source src="../static/videos/bridger_out_snow_trial_1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-5">
+          <div class="box p-3" style="border-radius: 12px; border: 1px solid #f0f0f0;">
+            <h3 class="title is-5 mb-3 px-2">Snow Environment 3D</h3>
+            
+            <model-viewer
+              src="../static/glb/out_snow.glb"
+              alt="3D model of snow environment"
+              camera-controls touch-action="pan-y" auto-rotate
+              camera-orbit="0deg 75deg 60%" shadow-intensity="1" exposure="1"
+              style="width: 100%; height: 350px; border-radius: 8px; background-color: #f8f9fa;">
+            </model-viewer>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section py-5" id="BibTeX">
+    <div class="container is-max-desktop">
+      <div class="box p-5" style="border-radius: 12px; background-color: #fafafa;">
+        <h2 class="title is-4 mb-3">BibTeX</h2>
+        <pre style="background-color: #f0f0f0; border-radius: 6px; padding: 1rem; font-size: 0.85rem;"><code>@misc{guerrier2026visionfoundationmodelsnavigate,
       title     = {Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned},
-      author    = {Maeva Guerrier and Karthik Soma and Jana Pavlasek and Giovanni Beltrame}  
+      author    = {Maeva Guerrier and Karthik Soma and Jana Pavlasek and Giovanni Beltrame},
       year      = {2026},
       eprint    = {2603.25937},
       archivePrefix = {arXiv},
       primaryClass = {cs.RO},
       url       = {https://arxiv.org/abs/2603.25937}, 
 }</code></pre>
-  </div>
-</section>
+      </div>
+    </div>
+  </section>
 
+  <footer class="footer py-5" style="background-color: #f8f9fa;">
+    <div class="content has-text-centered is-size-7 style="color: #7a7a7a;">
+      This page is adapted from <a href="https://nerfies.github.io/" style="color: #4a4a4a; text-decoration: underline;">Nerfies</a>.
+    </div>
+  </footer>
 
-<footer class="footer">
-    <center class="content">
-        This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>.
-    </center>
-</footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.25
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 
 </body>
 </html>
