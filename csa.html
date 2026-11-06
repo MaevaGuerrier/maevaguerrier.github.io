@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSA Mars Yard — Maeva Guerrier</title>
+<meta name="description" content="Two-day field test of visual navigation models on the Canadian Space Agency's Mars-like terrain in Montréal, September 2025.">
+
+<link rel="stylesheet" href="static/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .demo-card { padding: 28px; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; }
+  .demo-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+  .demo-tag { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+  .demo-tag.date { color: var(--accent); border-color: var(--accent); }
+  .demo-card p { margin-bottom: 10px; }
+  .demo-card h4 { margin: 18px 0 6px; font-size: 0.95rem; color: var(--accent); }
+  .demo-card ul { margin: 6px 0 0 18px; }
+  .demo-card li { margin-bottom: 4px; }
+  .todo { color: var(--muted); font-style: italic; }
+
+  /* ---------- Video showcase: two landscape clips stacked left, one portrait clip on the right ---------- */
+  .video-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-top: 20px;
+    grid-template-areas: "a b" "c b";
+  }
+  .video-grid figure { margin: 0; display: flex; flex-direction: column; min-height: 0; }
+  .video-grid figure:nth-child(1) { grid-area: a; }
+  .video-grid figure:nth-child(2) { grid-area: b; }
+  .video-grid figure:nth-child(3) { grid-area: c; }
+  .video-frame {
+    position: relative; aspect-ratio: 640 / 302; border-radius: 4px; overflow: hidden;
+    border: 2px dashed var(--line);
+  }
+  .video-frame .ph {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 8px; color: var(--muted); font-size: 0.82rem; text-align: center; padding: 12px;
+  }
+  .video-frame .ph i { font-size: 1.6rem; }
+  /* The video sits above the placeholder text; once a real file loads, it covers it. */
+  .video-frame img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .video-frame:has(img) { border: none; }
+  /* Portrait clip: fills the full height of the two stacked clips */
+  .video-frame.portrait { aspect-ratio: auto; flex: 1; min-height: 0; }
+  .video-frame.portrait img { position: absolute; inset: 0; }
+  .video-grid figcaption, .photo-mosaic figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- 3-photo mosaic: one large feature + two tiles ---------- */
+  .photo-mosaic {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px;
+    grid-template-areas:
+      "a a b"
+      "a a c";
+  }
+  .photo-mosaic figure { margin: 0; display: flex; flex-direction: column; min-height: 0; }
+  .photo-mosaic figure:nth-child(1) { grid-area: a; }
+  .photo-mosaic figure:nth-child(2) { grid-area: b; }
+  .photo-mosaic figure:nth-child(3) { grid-area: c; }
+  .photo-mosaic img, .photo-mosaic .demo-placeholder { width: 100%; flex: 1; min-height: 140px; object-fit: cover; border-radius: 4px; display: block; }
+  .photo-mosaic figure:not(:first-child) img,
+  .photo-mosaic figure:not(:first-child) .demo-placeholder { aspect-ratio: 4 / 3; }
+  .demo-placeholder { border: 2px dashed var(--line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 0.82rem; text-align: center; padding: 12px; }
+  .demo-placeholder i { font-size: 1.6rem; }
+
+  @media (max-width: 700px) {
+    .video-grid { grid-template-columns: 1fr; grid-template-areas: "a" "c" "b"; }
+    .video-frame.portrait { aspect-ratio: 360 / 762; flex: none; width: 100%; max-width: 280px; margin: 0 auto; }
+    .photo-mosaic { grid-template-columns: repeat(2, 1fr); grid-template-areas: "a a" "b c"; }
+    .photo-mosaic figure:first-child .demo-placeholder,
+    .photo-mosaic figure:first-child img { aspect-ratio: 4 / 3; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Maeva Guerrier</a>
+    <button class="nav-burger" aria-label="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#overview">Overview</a>
+      <a href="#videos">Videos</a>
+      <a href="#photos">Photos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">Field Test &middot; Canadian Space Agency</p>
+    <h1>Visual Navigation on Mars-Like Terrain</h1>
+    <p class="hero-sub">September 29, 2025 &middot; Two days on site &middot; Canadian Space Agency, Montréal</p>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="section" id="overview">
+  <div class="container">
+    <h2>Overview</h2>
+    <article class="demo-card">
+      <h3>Robot Deployment at the Canadian Space Agency</h3>
+      <div class="demo-meta">
+        <span class="demo-tag date"><i class="far fa-calendar"></i> September 29, 2025</span>
+        <span class="demo-tag">Field deployment</span>
+        <span class="demo-tag">2-day test</span>
+        <span class="demo-tag">Planetary analog terrain</span>
+      </div>
+      <p>
+        The Canadian Space Agency (CSA) has a real-world, Mars-like outdoor terrain with craters,
+        sand hills and rocks. We spent two days there deploying our robot and visual navigation
+        models on it.
+      </p>
+      <p>
+        This was mostly an internal test, not a public demo. We wanted to see how the models behave
+        in an environment very far from where they were trained: loose sand, uneven slopes, scattered
+        rocks, and few of the visual landmarks you find in indoor and urban scenes.
+      </p>
+
+      <h4>Setup</h4>
+      <p class="todo">[WIP]</p>
+      <!-- <p class="todo">[Robot platform(s) used, models tested (e.g. VISTA, baselines), and the routes or goals you ran.]</p> -->
+
+      <h4>What we observed</h4>
+      <p class="todo">[WIP]</p>
+      <!-- <p class="todo">[How the models behaved on sand, slopes and around craters and rocks, and where they did well or failed.]</p> -->
+
+      <h4>Takeaways</h4>
+      <p class="todo">[WIP]</p>
+      <!-- <p class="todo">[What the test taught you and how it fed into later work.]</p> -->
+    </article>
+  </div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section class="section alt" id="videos">
+  <div class="container">
+    <h2>Showcase</h2>
+    <p>Runs on the terrain.</p>
+    <!-- Clips are animated WebP in static/videos/csa/ (convert with ffmpeg, libwebp_anim). -->
+    <div class="video-grid" id="csa-videos">
+      <figure>
+        <div class="video-frame">
+          <img src="static/videos/csa/csa1.webp" alt="Spot walking across the sand on the CSA Mars-like terrain (2&times; speed)" loading="lazy">
+        </div>
+        <figcaption>Spot Visual Navigation Model deployment</figcaption>
+      </figure>
+      <figure>
+        <div class="video-frame portrait">
+          <img src="static/videos/csa/csa2.webp" alt="Tracked rover driving out of a culvert tunnel between rocks (2&times; speed)" loading="lazy">
+        </div>
+        <figcaption>Bunker exiting a tunnel</figcaption>
+      </figure>
+      <figure>
+        <div class="video-frame">
+          <img src="static/videos/csa/csa3.webp" alt="Tracked rover driving across sand and rocks on the CSA terrain (2&times; speed)" loading="lazy">
+        </div>
+        <figcaption>Bunker Visual Navigation Model deployment</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTOS ============ -->
+<section class="section" id="photos">
+  <div class="container">
+    <h2>On the Terrain</h2>
+    <!-- Photo 1 is the large feature tile. -->
+    <div class="photo-mosaic">
+      <figure>
+        <img src="static/images/csa/csa3.jpg" alt="Robot on the Canadian Space Agency Mars-like terrain" loading="lazy">
+        <figcaption>First day!</figcaption>
+      </figure>
+      <figure>
+        <img src="static/images/csa/csa2.jpg" alt="Field test on the CSA Mars-like terrain" loading="lazy">
+        <figcaption>Cave navigation with Spot</figcaption>
+      </figure>
+      <figure>
+        <img src="static/images/csa/csa1.jpg" alt="Field test on the CSA Mars-like terrain" loading="lazy">
+        <figcaption>Cave navigation with bunker</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <h3>Contact</h3>
+      <p>Montréal, Canada</p>
+      <p><a href="mailto:maeva.guerrier@orange.fr">maeva.guerrier@orange.fr</a></p>
+    </div>
+    <div>
+      <h3>Let's Connect</h3>
+      <p><a href="https://github.com/MaevaGuerrier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></p>
+      <p><a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a></p>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Maeva Guerrier. All rights reserved.</p>
+</footer>
+
+<script src="static/js/portfolio.js"></script>
+</body>
+</html>

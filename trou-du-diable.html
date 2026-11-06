@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trou du Diable Cave — Maeva Guerrier</title>
+<meta name="description" content="Radio-Canada field mission in the Trou du Diable cave, Quebec: exploring a flooded cave with a Spot robot carrying a drone on its back.">
+
+<link rel="stylesheet" href="static/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  .demo-card { padding: 28px; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; }
+  .demo-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+  .demo-tag { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+  .demo-tag.date { color: var(--accent); border-color: var(--accent); }
+  .demo-card p { margin-bottom: 10px; }
+  .demo-card h4 { margin: 18px 0 6px; font-size: 0.95rem; color: var(--accent); }
+  .demo-card ul { margin: 6px 0 0 18px; }
+  .demo-card li { margin-bottom: 4px; }
+
+  /* ---------- 3-up video showcase (all play together) ---------- */
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  .video-grid figure { margin: 0; }
+  .video-frame {
+    position: relative; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden;
+    border: 2px dashed var(--line);
+  }
+  .video-frame .ph {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 8px; color: var(--muted); font-size: 0.82rem; text-align: center; padding: 12px;
+  }
+  .video-frame .ph i { font-size: 1.6rem; }
+  /* The video sits above the placeholder text; once a real file loads, it covers it. */
+  .video-frame img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .video-frame:has(img) { border: none; }
+  .video-grid figcaption, .photo-mosaic figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- 3-photo mosaic: one large feature + two stacked tiles ---------- */
+  .photo-mosaic {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px;
+    grid-template-areas:
+      "a a b"
+      "a a c";
+  }
+  .photo-mosaic figure { margin: 0; display: flex; flex-direction: column; min-height: 0; }
+  .photo-mosaic figure:nth-child(1) { grid-area: a; }
+  .photo-mosaic figure:nth-child(2) { grid-area: b; }
+  .photo-mosaic figure:nth-child(3) { grid-area: c; }
+  .photo-mosaic img, .photo-mosaic .demo-placeholder { width: 100%; flex: 1; min-height: 140px; object-fit: cover; border-radius: 4px; display: block; }
+  .photo-mosaic figure:not(:first-child) img,
+  .photo-mosaic figure:not(:first-child) .demo-placeholder { aspect-ratio: 4 / 3; }
+  .demo-placeholder { border: 2px dashed var(--line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 0.82rem; text-align: center; padding: 12px; }
+  .demo-placeholder i { font-size: 1.6rem; }
+
+  @media (max-width: 700px) {
+    .video-grid { grid-template-columns: 1fr; }
+    .photo-mosaic { grid-template-columns: repeat(2, 1fr); grid-template-areas: "a a" "b c"; }
+    .photo-mosaic figure:first-child .demo-placeholder,
+    .photo-mosaic figure:first-child img { aspect-ratio: 4 / 3; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Maeva Guerrier</a>
+    <button class="nav-burger" aria-label="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#overview">Overview</a>
+      <a href="#videos">Videos</a>
+      <a href="#photos">Photos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">Field Mission &middot; Radio-Canada</p>
+    <h1>Exploring the Trou du Diable Cave</h1>
+    <p class="hero-sub">Spot carrying a drone into a flooded cave &middot; Quebec, Canada</p>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="section" id="overview">
+  <div class="container">
+    <h2>Overview</h2>
+    <article class="demo-card">
+      <h3>Spot &amp; Drone Cave Exploration — Radio-Canada Field Mission</h3>
+      <div class="demo-meta">
+        <!-- TODO: replace with the mission date -->
+        <span class="demo-tag date"><i class="far fa-calendar"></i> Date TBD</span>
+        <span class="demo-tag">Field deployment</span>
+        <span class="demo-tag">Boston Dynamics Spot</span>
+        <span class="demo-tag">Cave exploration</span>
+        <span class="demo-tag">Media coverage</span>
+      </div>
+      <p>
+        For a Radio-Canada field mission, our team took a Boston Dynamics Spot robot into
+        <strong>Trou du Diable</strong>, a cave in Quebec. Spot carried a drone on its back:
+        the goal was for the pair to explore the cave together, with Spot moving through the
+        passages and the drone ready to take off where the legged robot could not go.
+      </p>
+      <p>
+        I was there in a support role, helping the other team members prepare, run and recover
+        the robots on site.
+      </p>
+
+      <h4>Waterproofing Spot on the spot</h4>
+      <p>
+        The most memorable moment came from the cave itself: the water level had risen, and
+        parts of the route Spot needed to cross were much deeper than planned. Spot's exposed
+        electronics were not built for that.
+      </p>
+      <p>
+        With very limited resources on hand, <strong>Maëlle Mathieu</strong> (Master's student)
+        and I improvised a fix using tape and plastic sheeting to seal the exposed electronics.
+        It held up: the team deployed Spot successfully in the cave, even where the water was
+        very high.
+      </p>
+      <ul>
+        <li>Supported the team throughout the field deployment in a demanding, wet, low-light environment.</li>
+        <li>Co-designed an improvised waterproofing solution for Spot from tape and plastic.</li>
+        <li>Enabled a successful deployment despite unexpectedly high water in the cave.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section class="section alt" id="videos">
+  <div class="container">
+    <h2>In the Cave</h2>
+    <p>Clips from the mission.</p>
+    <!-- Clips are animated WebP in static/videos/trou_diable/ (convert with ffmpeg, libwebp_anim). -->
+    <div class="video-grid" id="cave-videos">
+      <figure>
+        <div class="video-frame">
+          <img src="static/videos/trou_diable/cave1.webp" alt="Spot carrying the drone on its back (clip 1)" loading="lazy">
+        </div>
+        <figcaption>Caption for video 1</figcaption>
+      </figure>
+      <figure>
+        <div class="video-frame">
+          <img src="static/videos/trou_diable/cave2.webp" alt="Spot carrying the drone on its back through the snow (1.5&times; speed)" loading="lazy">
+        </div>
+        <figcaption>Caption for video 2</figcaption>
+      </figure>
+      <figure>
+        <div class="video-frame">
+          <div class="ph"><i class="fas fa-film"></i>Video 3<br><code>static/videos/trou_diable/cave3.webp</code></div>
+        </div>
+        <figcaption>Caption for video 3</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTOS ============ -->
+<section class="section" id="photos">
+  <div class="container">
+    <h2>From the Field</h2>
+    <!-- Replace each .demo-placeholder with: <img src="static/images/trou-du-diable/cave-N.jpg" alt="...">
+         Photo 1 is the large feature tile. -->
+    <div class="photo-mosaic">
+      <figure>
+        <div class="demo-placeholder"><i class="far fa-image"></i>Photo 1 (feature)<br><code>static/images/trou-du-diable/cave-1.jpg</code></div>
+        <figcaption>Caption for photo 1</figcaption>
+      </figure>
+      <figure>
+        <div class="demo-placeholder"><i class="far fa-image"></i>Photo 2<br><code>static/images/trou-du-diable/cave-2.jpg</code></div>
+        <figcaption>Caption for photo 2 (e.g. waterproofing Spot with tape &amp; plastic)</figcaption>
+      </figure>
+      <figure>
+        <div class="demo-placeholder"><i class="far fa-image"></i>Photo 3<br><code>static/images/trou-du-diable/cave-3.jpg</code></div>
+        <figcaption>Caption for photo 3</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <h3>Contact</h3>
+      <p>Montréal, Canada</p>
+      <p><a href="mailto:maeva.guerrier@orange.fr">maeva.guerrier@orange.fr</a></p>
+    </div>
+    <div>
+      <h3>Let's Connect</h3>
+      <p><a href="https://github.com/MaevaGuerrier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></p>
+      <p><a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a></p>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Maeva Guerrier. All rights reserved.</p>
+</footer>
+
+<script src="static/js/portfolio.js"></script>
+</body>
+</html>
