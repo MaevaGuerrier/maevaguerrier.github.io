@@ -1,0 +1,19 @@
+# ---- Raw source videos (pages use the compressed .webp versions) ----
+# mrss2026_participants_challenges3.mp4 is 193 MB, over GitHub's 100 MB limit.
+static/videos/mrss/*.mp4
+static/videos/csa/*.mp4
+static/videos/trou_diable/*.mp4
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# ---- Editors ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+Maeva_Guerrier_CV.pdf
