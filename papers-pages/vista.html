@@ -145,19 +145,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Visual Navigation Models (VNMs) promise generalizable, robot navigation by learning 
-            from large-scale visual demonstrations. Despite growing real-world deployment, existing 
-            evaluations rely almost exclusively on success rate, whether the robot reaches its goal, 
-            which conceals trajectory quality, collision behavior, and robustness to environmental 
-            change. We present a real-world evaluation of five state-of-the-art VNMs (GNM, ViNT, NoMaD, 
-            NaviBridger, and CrossFormer) across two robot platforms and five environments spanning indoor 
-            and outdoor settings. Beyond success rate, we combine path-based metrics with vision-based 
-            goal-recognition scores and assess robustness through controlled image perturbations (motion blur, 
-            sunflare). Our analysis uncovers three systematic limitations: (a) even architecturally sophisticated 
-            diffusion and transformer-based models exhibit frequent collisions, indicating limited geometric 
-            understanding; (b) models fail to discriminate between different locations that are perceptually 
-            similar, however some semantics differences are present, causing goal prediction errors in 
-            repetitive environments; and (c) performance degrades under distribution shift. 
+              Vision Navigation Foundation Models aim to learn general-purpose visual navigation policies that can be deployed 
+              zero-shot across environments and embodiments. In RGB-based waypoint navigation, however, normalized predictions 
+              can correspond to different metric displacements when the deployment speed or control frequency changes, causing 
+              the same predicted trajectory to be executed at different physical scales. We introduce VISTA, a single camera visual 
+              navigation model that addresses this scale inconsistency by conditioning waypoint predictions on recent commanded displacement 
+              history and training across varied sampling intervals using per-trajectory metric step sizes. VISTA further uses a frozen DINOv3 
+              visual encoder to preserve trajectory shape consistency. We evaluate VISTA through controlled offline ablations, deployment under 
+              varying step sizes, and zero-shot real-world navigation in three environments not used for training: Outdoor, Forest, and Office-Lab. 
+              Across 13 real-world trials spanning 369.12m, VISTA completes all trials without collision in the three unseen environments, 
+              whereas every evaluated method exhibits failure across these settings. VISTA also achieves an average of 95% of reference checkpoints 
+              crossed, demonstrating consistent path following across the tested unseen environments.
           </p>
         </div>
       </div>
