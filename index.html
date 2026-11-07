@@ -1,125 +1,606 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="description"
-            content="to do">
-    <meta name="keywords" content="to do">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maeva Guerrier</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maeva Guerrier | Robotics &amp; ML Engineer</title>
+<meta name="description" content="Maeva Guerrier, Robotics & ML engineer (PhD candidate, Polytechnique Montréal & Mila). I train visual navigation models and deploy them on real robots: Spot, Unitree G1, AgileX.">
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<!-- Link previews (LinkedIn, Slack, email) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maeva Guerrier | Robotics & ML Engineer">
+<meta property="og:description" content="I train visual navigation models and deploy them on real robots, from field tests to live demos for industry and government.">
+<meta property="og:image" content="https://maevaguerrier.github.io/static/images/web/g1-italian-embassy-2.jpg">
+<meta property="og:url" content="https://maevaguerrier.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230b1a2e'/><text x='32' y='43' font-family='Arial' font-size='30' font-weight='700' fill='%23c9a86a' text-anchor='middle'>MG</text></svg>">
 
-        function gtag() {
-        dataLayer.push(arguments);
-        }
+<!-- Google Analytics (ID from the previous index.html) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PYVRSFMDRL');
+</script>
 
-        gtag('js', new Date());
+<!-- Hero poster first: it is the first thing painted, the video streams in after -->
+<link rel="preload" as="image" href="static/images/web/hero-poster.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="static/css/portfolio.css">
+<link rel="stylesheet" href="static/css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
 
-        gtag('config', 'G-PYVRSFMDRL');
-    </script>
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">Maeva Guerrier</a>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#deployments">Deployments</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+      <a href="Maeva_Guerrier_Resume.pdf" class="nav-cta">Resume</a>
+    </nav>
+  </div>
+</header>
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-            rel="stylesheet">
+<!-- ============ HERO ============ -->
+<section class="vhero" id="top">
+  <video class="hero-video" muted loop playsinline preload="none"
+         poster="static/images/web/hero-poster.jpg" aria-hidden="true"
+         data-src="static/videos/web/hero.mp4"></video>
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
+  <!-- Robot-camera HUD: the hero reads like the feed a navigation model sees -->
+  <div class="hud" aria-hidden="true">
+    <span class="hud-corner tl"></span><span class="hud-corner tr"></span>
+    <span class="hud-corner bl"></span><span class="hud-corner br"></span>
+    <div class="hud-top-left"><span class="rec"></span>REC &middot; CAM_01<span class="hud-wide"> &middot; FIELD LOG</span></div>
+    <div class="hud-top-right">T+ <span class="hud-clock">00:00.0</span></div>
+    <svg class="hud-path" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <path class="pred" d="M1040 880 C 1060 760, 1120 660, 1180 590 S 1300 460, 1330 360"/>
+      <circle class="wp" cx="1073" cy="764" r="7"/>
+      <circle class="wp" cx="1129" cy="658" r="7"/>
+      <circle class="wp" cx="1204" cy="563" r="7"/>
+      <circle class="wp" cx="1279" cy="469" r="7"/>
+      <g class="goal" transform="translate(1330 360)">
+        <circle r="26"/><circle r="6"/>
+        <line x1="-42" y1="0" x2="-30" y2="0"/><line x1="30" y1="0" x2="42" y2="0"/>
+        <line x1="0" y1="-42" x2="0" y2="-30"/><line x1="0" y1="30" x2="0" y2="42"/>
+      </g>
+      <text class="hud-label" x="1378" y="352">GOAL</text>
+      <text class="hud-label dim" x="1378" y="378">image-goal</text>
+    </svg>
+    <div class="hud-bottom">deployed on <span class="hud-platform">Boston Dynamics Spot</span></div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <div id="navbar-placeholder"></div>
-    <script src="/static/js/nav-loader.js"></script>
-    <!-- /Navigation Bar -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/index.js"></script>
-    </head>
-    <body>
-
-    <section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column has-text-centered">
-            <h1 class="title is-1 page-title">Under Active Construction</h1>
-
-            <div class="column has-text-centered">
-                <div class="publication-links">
-                <!-- Code Link. -->
-                <span class="link-block">
-                    <a href="https://github.com/MaevaGuerrier"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>GiHub</span>
-                    </a>
-                </span>
-                </div>
-
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-</section>
-
-<section class="hero teaser">
-    <div class="container is-max-desktop">
-      <h2 class="subtitle has-text-centered">
-        Hi I'm Maeva, PhD Candiate at Polytechnique Montréal!
-      </h2>
-    </div>
-</section>
-
-
-
-  <section class="hero is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        
-        <div class="wip-card">
-
-          <!-- Main Title -->
-          <h1 class="title is-2 style-title" style="color: #222;">
-            That's all folks!
-          </h1>
-          
-          <h2 class="subtitle is-5 has-text-grey mt-2">
-            Our robots are currently lost in the latent space trying to compile this page.
-          </h2>
-
-          <figure class="image is-inline-block">
-            <img class="wip-image" 
-                 src="/static/images/g1_on_ground.jpg" 
-                 alt="Robot crashing into a wall" />
-          </figure>
-
-          <div class="content mt-4" style="color: #4a4a4a; line-height: 1.6;">
-            <p>
-              I tried letting my robot write the HTML, but it decided to take a nap instead. 
-              Check back soon, I am currently working on it, and refueling on coffee.
-            </p>
-          </div>
-
-        </div>
-
+  <div class="vhero-inner">
+    <h1>Maeva Guerrier</h1>
+    <p class="role-line">Robotics &amp; ML Engineer &middot; PhD candidate, Polytechnique Montréal &amp; Mila</p>
+    <p class="pitch">
+      I train visual navigation models and get them running on real robots: quadrupeds,
+      humanoids and field rovers, from lab tests to live demos for industry and government.
+    </p>
+    <!-- TODO: add your availability date, e.g. "from September 2027" -->
+    <p class="open-to"><span class="dot"></span>Open to Robotics / ML Engineer and technical lead roles</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="Maeva_Guerrier_Resume.pdf">Download resume</a>
+      <a class="btn-resume" href="#contact">Get in touch</a>
+      <div class="icon-links">
+        <!-- TODO: add LinkedIn once the profile URL is known:
+        <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
+        <a href="https://github.com/MaevaGuerrier" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:maeva.guerrier@orange.fr" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- ============ PARTNERS BAND ============ -->
+<section class="partners" aria-label="Organizations I have demonstrated for or worked with">
+  <div class="partners-inner">
+    <span class="partners-label">Demonstrated for &amp; deployed with</span>
+    <ul>
+      <li><a href="#d-airbus">Airbus</a></li>
+      <li><a href="#d-csa">Canadian Space Agency</a></li>
+      <li><a href="#d-mila">Mila</a></li>
+      <li><a href="#d-navy">Italian Embassy &amp; Navy</a></li>
+      <li><a href="#d-whales">Flying Whales</a></li>
+    </ul>
+  </div>
+</section>
 
-<footer class="footer">
-    <center class="content">
-        This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>.
-    </center>
+<!-- ============ IMPACT STRIP ============ -->
+<section class="impact" aria-label="Highlights">
+  <div class="impact-grid" style="max-width: var(--max-width); margin: 0 auto;">
+    <div class="impact-item"><span class="num">6</span><span class="label">robot platforms deployed on</span></div>
+    <div class="impact-item"><span class="num">3 yrs</span><span class="label">industry DevOps at Orange</span></div>
+    <div class="impact-item"><span class="num">5</span><span class="label">live demos &amp; field deployments</span></div>
+    <div class="impact-item"><span class="num">4</span><span class="label">students &amp; interns mentored</span></div>
+    <div class="impact-item"><span class="num">4</span><span class="label">first-author papers</span></div>
+  </div>
+</section>
+
+<!-- ============ DEPLOYMENTS ============ -->
+<section class="section" id="deployments">
+  <div class="container">
+    <h2>Deployments &amp; Live Demos</h2>
+    <p class="lead">My models leave the lab. I demo them to industry and government, and test them in places they were never trained for.</p>
+
+    <div class="spotlight-grid">
+      <article class="spotlight" id="d-airbus">
+        <span class="org-mark">Airbus</span>
+        <span class="when">July 2026 &middot; Industry R&amp;T</span>
+        <h3>Presented to Aircraft of Tomorrow R&amp;T leadership</h3>
+        <p>Presented VISTA and visual navigation models to Airbus R&amp;T leadership, including industrial use cases.</p>
+      </article>
+      <article class="spotlight" id="d-mila">
+        <span class="org-mark">Mila</span>
+        <span class="when">Sept 2026 &middot; Live demo</span>
+        <h3>Two labs, one Spot, live</h3>
+        <p>Co-ran VISTA and FARM (language-driven navigation, from Liam Paull's lab) on one shared robot in front of the Mila community.</p>
+      </article>
+    </div>
+
+    <div class="deploy-grid">
+      <a class="deploy" id="d-navy" href="papers-pages/vista.html">
+        <div class="deploy-img">
+          <img src="static/images/web/g1-italian-embassy-2.jpg" loading="lazy" alt="Unitree G1 humanoid walking during the VISTA demonstration">
+          <span class="org-badge">Italian Embassy &amp; Navy</span>
+        </div>
+        <div class="deploy-body">
+          <span class="when">July 2026 &middot; Humanoid</span>
+          <h3>VISTA live on a Unitree G1</h3>
+          <p>Led the demo end to end, from model to robot integration to running it on site, and explained it to a non-specialist delegation.</p>
+        </div>
+      </a>
+      <a class="deploy" id="d-csa" href="csa.html">
+        <div class="deploy-img">
+          <img src="static/images/web/20250929_154154.jpg" loading="lazy" alt="Spot robot on the Mars-like terrain of the Canadian Space Agency">
+          <span class="org-badge">Canadian Space Agency</span>
+        </div>
+        <div class="deploy-body">
+          <span class="when">Sept 2025 &middot; Field test</span>
+          <h3>Navigation on Mars-like terrain</h3>
+          <p>Two days testing navigation models on craters, sand and rocks, far from the conditions they were trained on.</p>
+        </div>
+      </a>
+      <a class="deploy" href="trou-du-diable.html">
+        <div class="deploy-img">
+          <img src="static/images/web/cave.jpg" loading="lazy" alt="Spot robot pulling equipment on snow before the cave mission">
+          <span class="org-badge">Featured on Radio-Canada</span>
+        </div>
+        <div class="deploy-body">
+          <span class="when">Field mission &middot; Cave</span>
+          <h3>Spot &amp; drone in the Trou du Diable cave</h3>
+          <p>When water rose in the cave, improvised waterproofing for Spot from tape and plastic. It held, and the deployment went ahead.</p>
+        </div>
+      </a>
+    </div>
+
+    <ul class="also">
+      <li id="d-whales"><span class="when">Industry delivery</span><span><strong>Flying Whales.</strong> Managed an intern project that delivered task-driven RL policies for blimp flight to the company, aimed at reducing pilots' cognitive load.</span></li>
+      <li><span class="when">2024 &amp; 2026</span><span><strong>Montréal Robotics Summer School (Mila).</strong> Won 1st place as a participant in 2024, then joined the organizing team in 2026 and validated the Unitree Go2 codebase. <a href="mrss.html">More</a></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SKILLS (video wall) ============ -->
+<section class="section alt" id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <p class="lead">Each clip is from my own work or collaborations.</p>
+    <div class="skill-wall">
+      <figure class="skill-tile fit">
+        <video class="lazy-video" muted loop playsinline preload="none"
+               poster="static/images/web/skill-ml.jpg" data-src="static/videos/web/skill-ml.mp4"
+               aria-label="Side-by-side runs of the ViNT and VISTA navigation models driving the same robot"></video>
+        <div class="skill-overlay">
+          <p class="skill-cap"><span class="rec"></span>01 &middot; ViNT vs. VISTA</p>
+          <div class="skill-body">
+            <h3>Machine learning</h3>
+            <ul class="chips"><li>PyTorch</li><li>Reinforcement learning</li><li>Safe RL / CBFs</li><li>Vision foundation models (DINOv3)</li><li>Visual navigation</li><li>scikit-learn</li><li>OpenCV</li></ul>
+          </div>
+        </div>
+      </figure>
+      <figure class="skill-tile">
+        <video class="lazy-video" muted loop playsinline preload="none"
+               poster="static/images/web/skill-robotics.jpg" data-src="static/videos/web/skill-robotics.mp4"
+               aria-label="Boston Dynamics Spot climbing a staircase"></video>
+        <div class="skill-overlay">
+          <p class="skill-cap"><span class="rec"></span>02 &middot; Spot &middot; stairs</p>
+          <div class="skill-body">
+            <h3>Robotics</h3>
+            <ul class="chips"><li>ROS</li><li>Gazebo</li><li>Sim-to-real</li><li>Real-robot integration</li><li>Field testing</li><li>Spot</li><li>Humanoid G1</li><li>Unitree Go2</li><li>AgileX Bunker</li><li>AgileX Limo</li></ul>
+          </div>
+        </div>
+      </figure>
+      <figure class="skill-tile fit">
+        <video class="lazy-video" muted loop playsinline preload="none"
+               poster="static/images/web/skill-software.jpg" data-src="static/videos/web/skill-software.mp4"
+               aria-label="AgileX Bunker driving through a forest"></video>
+        <div class="skill-overlay">
+          <p class="skill-cap"><span class="rec"></span>03 &middot; Bunker &middot; forest</p>
+          <div class="skill-body">
+            <h3>Software &amp; DevOps</h3>
+            <ul class="chips"><li>Python</li><li>C</li><li>Java</li><li>Shell</li><li>Docker</li><li>Ansible</li><li>Jenkins</li><li>GitLab CI/CD</li><li>AWS</li><li>PostgreSQL</li></ul>
+          </div>
+        </div>
+      </figure>
+      <figure class="skill-tile">
+        <video class="lazy-video" muted loop playsinline preload="none"
+               poster="static/images/web/skill-lead.jpg" data-src="static/videos/web/skill-lead.mp4"
+               aria-label="Unitree Go2 running a challenge in front of summer-school participants"></video>
+        <div class="skill-overlay">
+          <p class="skill-cap"><span class="rec"></span>04 &middot; Go2 &middot; MRSS 2026</p>
+          <div class="skill-body">
+            <h3>Leadership</h3>
+            <ul class="chips"><li>Scrum Master</li><li>Mentoring &amp; supervision</li><li>Industry partner delivery</li><li>Stakeholder demos</li><li>Event organization</li></ul>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED WORK ============ -->
+<section class="section" id="work">
+  <div class="container">
+    <h2>Featured Work</h2>
+    <p class="lead">From designing and training models, integrating them on robots, and testing them outside the lab.</p>
+
+    <ol class="loop" aria-label="How I work: train, integrate, deploy, diagnose">
+      <li class="loop-step">
+        <span class="k">01 / Train</span>
+        <h3>Design the model</h3>
+        <p>PyTorch, DINOv3 encoders, action-history conditioning, safe RL with control barrier functions.</p>
+      </li>
+      <li class="loop-step">
+        <span class="k">02 / Integrate</span>
+        <h3>Put it on the robot</h3>
+        <p>ROS, Docker and real sensors on Spot, Humanoid G1, Drones, and AgileX wheel-robots.</p>
+      </li>
+      <li class="loop-step">
+        <span class="k">03 / Deploy</span>
+        <h3>Take it outside</h3>
+        <p>Mars-like terrain at the Canadian Space Agency, forest, campus, live demos for the Italian Navy and Airbus.</p>
+      </li>
+      <li class="loop-step">
+        <span class="k">04 / Diagnose</span>
+        <h3>Find out why it failed</h3>
+        <p>Understanding trends in observed behaviors. See my 5-model real-world evaluation, which came out of this step.</p>
+      </li>
+    </ol>
+
+    <article class="case">
+      <div class="case-media">
+        <video class="lazy-video" muted loop playsinline preload="none"
+               poster="static/images/web/vista-card.jpg"
+               data-src="static/videos/web/vista-card.mp4"
+               aria-label="VISTA steering an AgileX Bunker through a sharp turn"></video>
+      </div>
+      <div>
+        <h3>VISTA: Scale-Aware Visual Navigation</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Camera-only navigation models lose track of scale and break when moved to a new robot or environment.</dd>
+          <dt>Built</dt>
+          <dd>Co-led (equal contribution) a navigation model conditioned on action history with a DINOv3 encoder, and took it from training to deployment on physical robots.</dd>
+          <dt>Result</dt>
+          <dd><strong>100% zero-shot goal-prediction accuracy</strong> in outdoor, forest and office deployments. Demonstrated live on a Unitree G1 humanoid and Boston Dynamics Spot.</dd>
+        </dl>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">DINOv3</span><span class="tag">ROS</span><span class="tag">Sim-to-real</span></div>
+        <div class="links">
+          <a href="papers-pages/vista.html"><i class="fas fa-arrow-right"></i>Project page</a>
+          <a href="https://github.com/MaevaGuerrier/VISTA" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+          <a href="https://arxiv.org/abs/2606.17294" target="_blank" rel="noopener"><i class="far fa-file-lines"></i>Paper</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-media">
+        <img class="contain" src="static/images/web/eval_succ_fail_easy_office.jpg" loading="lazy"
+             alt="Trajectories of five navigation models in an office, split into successful trials and failures">
+      </div>
+      <div>
+        <h3>Real-World Evaluation of Navigation Foundation Models</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Success rate alone hides <em>why</em> navigation models fail on real hardware.</dd>
+          <dt>Built</dt>
+          <dd>Led a zero-shot evaluation of 5 models (GNM, ViNT, NoMaD, NaviBridger, CrossFormer) on <strong>2 robots across 5 environments</strong>, with path-quality, goal-recognition and perturbation-robustness metrics.</dd>
+          <dt>Result</dt>
+          <dd>Open-source evaluation code and concrete lessons on where current models fail, for anyone choosing a model to deploy.</dd>
+        </dl>
+        <div class="tags"><span class="tag">Evaluation</span><span class="tag">Experimental design</span><span class="tag">AgileX Bunker</span><span class="tag">Spot</span></div>
+        <div class="links">
+          <a href="papers-pages/zero-shot-eval.html"><i class="fas fa-arrow-right"></i>Project page</a>
+          <a href="https://github.com/MaevaGuerrier/vnm-zeroshot-eval" target="_blank" rel="noopener"><i class="fab fa-github"></i>Code</a>
+          <a href="https://arxiv.org/abs/2603.25937" target="_blank" rel="noopener"><i class="far fa-file-lines"></i>Paper</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="mini-grid">
+      <article class="mini">
+        <i class="fas fa-shield-halved ico" aria-hidden="true"></i>
+        <h3>Safe Reinforcement Learning</h3>
+        <p>Used control barrier functions as "safety instructors" so RL agents learn tasks without repeatedly violating constraints. Includes a survey of the field.</p>
+        <div class="links">
+          <a href="papers-pages/control-barrier-safety-instructions.html"><i class="fas fa-arrow-right"></i>Paper</a>
+          <a href="papers-pages/learning-control-barrier-survey.html"><i class="fas fa-arrow-right"></i>Survey</a>
+        </div>
+      </article>
+      <article class="mini">
+        <i class="fas fa-wind ico" aria-hidden="true"></i>
+        <h3>RL Blimp Flight with Flying Whales</h3>
+        <p>Managed an intern project for an industry partner: task-driven RL policies for blimp flight, aimed at reducing pilots' cognitive load. Delivered to Flying Whales.</p>
+        <div class="tags"><span class="tag">Industry partner</span><span class="tag">Project management</span></div>
+      </article>
+      <article class="mini">
+        <i class="fab fa-docker ico" aria-hidden="true"></i>
+        <h3>Dockerized Gazebo for Navigation Models</h3>
+        <p>Scoped and supervised a ready-to-run Docker image with a Gazebo simulator, so anyone can test visual navigation models without a complex setup.</p>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Gazebo</span><span class="tag">Developer tooling</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section alt" id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <article class="timeline-item">
+        <div class="org-logos">
+          <img class="org-logo" src="static/images/poly_logo_w.png" alt="Polytechnique Montréal">
+          <img class="org-logo" src="static/images/mila_logo.svg" alt="Mila – Quebec AI Institute">
+        </div>
+        <div class="timeline-content">
+          <h3><a href="lab.html">MIST Lab, Polytechnique Montréal</a> &amp; <a href="https://mila.quebec" target="_blank" rel="noopener">Mila</a></h3>
+          <p class="role">PhD Researcher, Robot Learning</p>
+          <p class="dates">2023 – Present &middot; Montréal, Canada</p>
+          <ul>
+            <li>Co-led <strong>VISTA</strong>, a scale-aware visual navigation model, from training to deployment on Spot and a Unitree G1 humanoid.</li>
+            <li>Led a <strong>real-world evaluation of 5 navigation models</strong> on 2 robots across 5 environments.</li>
+            <li>Ran <strong>live demos for the Italian Navy, Airbus and Mila</strong>, and field tests at the Canadian Space Agency.</li>
+            <li><strong>Supervised 4 students and interns</strong>, including a project delivered to industry partner Flying Whales.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="org-logo org-icon" aria-hidden="true"><i class="fas fa-server"></i></div>
+        <div class="timeline-content">
+          <h3><a href="https://www.orange.com" target="_blank" rel="noopener">Orange</a></h3>
+          <p class="role">Production Engineer / DevOps Engineer (apprenticeship)</p>
+          <p class="dates">Sept 2019 – Sept 2022 &middot; Blagnac, France</p>
+          <ul>
+            <li><strong>Automated the group's disaster recovery plan</strong>, then extended it with DNS migration and scheduler management.</li>
+            <li><strong>Built an end-to-end validation pipeline</strong> (Ansible, Jenkins, GitLab CI/CD): packages that pass pre-production are immediately ready for production.</li>
+            <li><strong>Started and coordinated a database anonymization project</strong> for an Agile/SAFe release train, bringing all stakeholders together.</li>
+            <li><strong>Served as Scrum Master</strong> for the team.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEADERSHIP ============ -->
+<section class="section" id="leadership">
+  <div class="container">
+    <h2>Leadership &amp; Mentoring</h2>
+    <p class="lead">I adapt my role to the person: teacher for a newcomer, project manager for an industry deliverable, co-lead for a peer.</p>
+    <div class="lead-grid">
+      <div class="lead-card">
+        <h3>Elodie Ughetto &middot; Polytech Paris-Saclay</h3>
+        <p class="role">Tutor &amp; project manager &middot; Flying Whales partnership</p>
+        <p>Took her from no RL background to delivering task-driven blimp-flight policies to the industry partner.</p>
+      </div>
+      <div class="lead-card">
+        <h3>Koki Kobayashi &middot; Institute of Science Tokyo</h3>
+        <p class="role">Co-lead &amp; mentor &middot; VISTA</p>
+        <p>Paired my real-robot deployment experience with his dataset-training background to take VISTA from training to hardware.</p>
+      </div>
+      <div class="lead-card">
+        <h3>Tsung-En Lin &middot; National Taiwan University</h3>
+        <p class="role">Mentor &middot; out-of-distribution policies</p>
+        <p>Supported his project on vector-guided policies and connected him with Mila experts for specialist guidance.</p>
+      </div>
+      <div class="lead-card">
+        <h3>Lily-Rose Ares &middot; Polytechnique Montréal</h3>
+        <p class="role">Supervisor &middot; Canadian Baccalaureate intern</p>
+        <p>Scoped and supervised a Dockerized Gazebo simulator so the community can test navigation models easily.</p>
+      </div>
+      <div class="lead-card">
+        <h3>Women in AI &amp; Robotics, Montréal</h3>
+        <p class="role">Core team member</p>
+        <p>Event organizer, reading-group Q&amp;A lead and newsletter editor. Presented the association at World Summit AI Americas 2024.</p>
+      </div>
+      <div class="lead-card">
+        <h3>AI &amp; Robotics Education, McGill</h3>
+        <p class="role">Initiative lead</p>
+        <p>Leading an educational initiative that introduces students to AI and robotics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="section alt" id="publications">
+  <div class="container">
+    <h2>Publications</h2>
+    <ul class="pubs">
+      <li>
+        <h3><a href="papers-pages/vista.html">VISTA: Scale-Aware Visual Navigation via Action History Conditioning</a></h3>
+        <p class="authors"><b>M. Guerrier*</b>, K. Kobayashi*, S. Roy, J. Pavlasek, G. Beltrame (*equal contribution)</p>
+        <p class="venue">arXiv preprint, 2026
+          <a href="https://arxiv.org/abs/2606.17294" target="_blank" rel="noopener">Paper</a>
+          <a href="https://github.com/MaevaGuerrier/VISTA" target="_blank" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <h3><a href="papers-pages/zero-shot-eval.html">Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned</a></h3>
+        <p class="authors"><b>M. Guerrier</b>, K. Soma, J. Pavlasek, G. Beltrame</p>
+        <p class="venue">arXiv preprint, 2026
+          <a href="https://arxiv.org/abs/2603.25937" target="_blank" rel="noopener">Paper</a>
+          <a href="https://github.com/MaevaGuerrier/vnm-zeroshot-eval" target="_blank" rel="noopener">Code</a></p>
+      </li>
+      <li>
+        <h3><a href="papers-pages/control-barrier-safety-instructions.html">Guided by Guardrails: Control Barrier Functions as Safety Instructors for Robotic Learning</a></h3>
+        <p class="authors"><b>M. Guerrier</b>, K. Soma, H. Fouad, G. Beltrame</p>
+        <p class="venue">arXiv preprint, 2025
+          <a href="https://arxiv.org/abs/2505.18858" target="_blank" rel="noopener">Paper</a></p>
+      </li>
+      <li>
+        <h3><a href="papers-pages/learning-control-barrier-survey.html">Learning Control Barrier Functions and their Application in Reinforcement Learning: A Survey</a></h3>
+        <p class="authors"><b>M. Guerrier</b>, H. Fouad, G. Beltrame</p>
+        <p class="venue">arXiv preprint, 2024
+          <a href="https://arxiv.org/abs/2404.16879" target="_blank" rel="noopener">Paper</a></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ EDUCATION & HONORS ============ -->
+<section class="section" id="education">
+  <div class="container two-col">
+    <div>
+      <h2>Education</h2>
+      <ul class="plain-list">
+        <li><strong>PhD, Computer Engineering (Robotics &amp; AI)</strong><span>Polytechnique Montréal &amp; Mila &middot; 2023 – Present &middot; Advisors: G. Beltrame, J. Pavlasek</span></li>
+        <li><strong>Engineering degree, Computer Science &amp; Telecommunications</strong><span>ENSEEIHT, Toulouse INP &middot; 2019 – 2022 &middot; Apprenticeship, double degree</span></li>
+        <li><strong>DUT, Computer Science</strong><span>IUT de Blagnac &middot; 2017 – 2019</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Honors</h2>
+      <ul class="plain-list">
+        <li><strong>1st place, Montréal Robotics Summer School competition</strong><span>Mila &middot; 2024</span></li>
+        <li><strong>Speaker, World Summit AI Americas</strong><span>Presented Women in AI &amp; Robotics &middot; 2024</span></li>
+        <li><strong>3rd place, Assembly of Heads of Departments competition</strong><span>IUT, France &middot; Team website redesign</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section alt contact-cta" id="contact">
+  <h2>Let's talk</h2>
+  <p>I'm looking for Robotics / ML Engineer and technical lead roles. I'm based in Montréal and open to relocating anywhere.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="mailto:maeva.guerrier@orange.fr">maeva.guerrier@orange.fr</a>
+    <a class="btn-resume" href="Maeva_Guerrier_Resume.pdf">Resume (PDF)</a>
+  </div>
+  <div class="icon-links" style="margin-top: 22px;">
+    <a href="https://github.com/MaevaGuerrier" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+  </div>
+</section>
+
+<footer class="site-footer" style="padding: 24px 0;">
+  <p class="copyright" style="border: none; padding: 0;">&copy; 2026 Maeva Guerrier &middot; <a href="lab.html">MIST Lab</a></p>
 </footer>
 
+<script src="static/js/portfolio.js"></script>
+<script>
+  // Load videos only when useful: skip on reduced motion, small screens and data-saver (poster stays).
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var small = window.matchMedia('(max-width: 720px)').matches;
+    var conn = navigator.connection || {};
+    var saveData = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
+    function start(v) {
+      if (!v.src) { v.src = v.dataset.src; }
+      var p = v.play(); if (p && p.catch) { p.catch(function () {}); }
+    }
+    if (reduce || saveData) return;
+    var hero = document.querySelector('.hero-video');
+    if (hero && !small) {
+      // Fade the video in over the poster only once it can actually play (no black flash).
+      hero.addEventListener('playing', function () { hero.classList.add('is-ready'); }, { once: true });
+      start(hero);
+    }
+    var vids = document.querySelectorAll('.lazy-video');
+    if (!('IntersectionObserver' in window)) { vids.forEach(start); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) start(e.target); else if (e.target.src) e.target.pause();
+      });
+    }, { threshold: 0.3 });
+    vids.forEach(function (v) { io.observe(v); });
+  })();
+
+  // HUD, counters and scroll reveals. Everything degrades to static content without JS.
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Platform ticker in the hero HUD
+    var plat = document.querySelector('.hud-platform');
+    var platforms = ['Boston Dynamics Spot', 'Unitree G1 humanoid', 'Unitree Go2', 'AgileX Bunker', 'AgileX Limo'];
+    if (plat && !reduce) {
+      var i = 0;
+      setInterval(function () {
+        plat.classList.add('swap');
+        setTimeout(function () {
+          i = (i + 1) % platforms.length;
+          plat.textContent = platforms[i];
+          plat.classList.remove('swap');
+        }, 250);
+      }, 2600);
+    }
+
+    // Mission clock
+    var clock = document.querySelector('.hud-clock');
+    if (clock && !reduce) {
+      var t0 = performance.now();
+      setInterval(function () {
+        var s = (performance.now() - t0) / 1000;
+        var m = Math.floor(s / 60);
+        clock.textContent = String(m).padStart(2, '0') + ':' + (s % 60).toFixed(1).padStart(4, '0');
+      }, 100);
+    }
+
+    if (reduce || !('IntersectionObserver' in window)) return;
+
+    // Count-up for the impact numbers ("3 yrs" keeps its suffix)
+    var nums = document.querySelectorAll('.impact-item .num');
+    var countIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        countIO.unobserve(e.target);
+        var el = e.target, m = el.textContent.match(/^(\d+)(.*)$/);
+        if (!m) return;
+        var end = +m[1], rest = m[2], t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min((now - t0) / 900, 1);
+          el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + rest;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (n) { countIO.observe(n); });
+
+    // Gentle reveal as sections scroll in
+    var targets = document.querySelectorAll('.case, .loop-step, .mini, .spotlight, .deploy, .skill-tile, .timeline-item, .lead-card, .pubs li');
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (t) { t.classList.add('reveal'); revealIO.observe(t); });
+  })();
+</script>
 </body>
 </html>
