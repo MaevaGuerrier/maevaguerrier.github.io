@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  padding-top: 70px;
+}
+
+.subtitle {
+  padding: 10px;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.page-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.author {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+.env-carousel {
+  overflow: hidden;
+}
+
+.env-carousel .item {
+  margin: 10px;
+  border: 1px solid #bbb;
+  border-radius: 12px;
+  overflow: hidden;
+
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.env-carousel img {
+  object-fit: contain;
+}
+
+.robot-image {
+  height: 25rem;
+  transition: transform 0.2s ease;
+}
+
+.robot-image:hover {
+  transform: scale(1.08);
+}

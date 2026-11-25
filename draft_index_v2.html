@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maeva Guerrier</title>
+<meta name="description" content="Maeva Guerrier — PhD candidate in Robotics &amp; AI at Polytechnique Montréal and Mila">
+
+<link rel="stylesheet" href="static/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* Icon fallback for organizations without a logo file */
+  .org-icon { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--muted); padding-top: 4px; }
+  .timeline-content ul { margin: 8px 0 0 18px; }
+  .timeline-content li { margin-bottom: 4px; }
+  .pub-venue a { margin-right: 12px; }
+
+  /* ---------- Demonstrations ---------- */
+  .demo-list { display: flex; flex-direction: column; gap: 32px; }
+  .demo-card { padding: 28px; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; }
+  .demo-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+  .demo-tag { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+  .demo-tag.date { color: var(--accent); border-color: var(--accent); }
+  .demo-card p { margin-bottom: 10px; }
+  .demo-card ul { margin: 6px 0 0 18px; }
+  .demo-card li { margin-bottom: 4px; }
+  .demo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  .demo-gallery figure { margin: 0; }
+  .demo-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; display: block; }
+  .demo-placeholder { aspect-ratio: 4 / 3; border: 2px dashed var(--line); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 0.82rem; text-align: center; padding: 12px; }
+  .demo-placeholder i { font-size: 1.6rem; }
+  .demo-gallery figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+  @media (max-width: 700px) { .demo-gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand"></a>
+    <button class="nav-burger" aria-label="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#profile">Profile</a>
+      <a href="#demos">Demos</a>
+      <a href="mrss.html">MRSS</a>
+      <a href="csa.html">CSA</a>
+      <a href="trou-du-diable.html">Cave</a>
+      <a href="lab.html">Lab</a>
+      <a href="#experience">Experience</a>
+      <a href="#supervision">Supervision</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="eyebrow">PhD Candidate in Robotics &amp; AI</p>
+    <h1>Maeva Guerrier</h1>
+    <p class="hero-sub">Visual Navigation &middot; Robot Learning &middot; Reinforcement Learning &middot; Real-World Deployment</p>
+    <a class="btn-resume" href="Maeva_Guerrier_CV.pdf">My Resume</a>
+  </div>
+</section>
+
+<!-- ============ PROFILE OVERVIEW ============ -->
+<section class="section" id="profile">
+  <div class="container">
+    <h2>Profile Overview</h2>
+    <div class="profile-grid">
+      <div class="profile-text">
+        <p>
+          PhD candidate at the <a href="lab.html">MIST Lab</a>, Polytechnique Montréal, and Mila Quebec AI Institute,
+          supervised by Giovanni Beltrame and co-supervised by Jana Pavlasek. My research lies at the
+          intersection of deep learning, robotics and reinforcement learning, with a current focus on
+          Visual Navigation Models (VNMs): RGB-only navigation, topological graphs, learned distance
+          prediction and cross-embodiment generalization for robust deployment on real robots.
+        </p>
+        <p>
+          My work spans safe reinforcement learning (control barrier functions), model training and
+          real-world evaluation, and deployment on physical platforms such as Boston Dynamics Spot,
+          AgileX Bunker, AgileX Limo and Unitree G1. In 2026 I demonstrated VISTA running live on
+          a Unitree G1 humanoid for the Italian Embassy and the Italian Navy, and presented it to
+          Airbus R&amp;T leadership.
+        </p>
+        <p>
+          Before research, I spent three years as an apprentice DevOps / production engineer at Orange.
+          I was also a core team member of Women in AI &amp; Robotics in Montréal and lead an educational
+          initiative on AI and robotics at McGill University.
+        </p>
+      </div>
+      <figure class="profile-photo">
+        <img src="static/images/maeva.jpg" alt="Maeva Guerrier">
+      </figure>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">Years in Industry</span></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-label">Robot Platforms Deployed</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Papers</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Students Supervised</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMONSTRATIONS ============ -->
+<section class="section alt" id="demos">
+  <div class="container">
+    <h2>Live Demonstrations &amp; Industry Presentations</h2>
+    <p>Taking research out of the lab: presenting and demonstrating my work to institutional, industry and research audiences, often alongside collaborators from other labs and backgrounds.</p>
+    <div class="demo-list">
+
+      <article class="demo-card">
+        <h3>Live Spot Demo at Mila — VISTA &amp; FARM Prompt-Based Navigation</h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> September 14, 2026</span>
+          <span class="demo-tag">Live robot demo</span>
+          <span class="demo-tag">Boston Dynamics Spot</span>
+          <span class="demo-tag">Cross-lab collaboration</span>
+        </div>
+        <p>
+          At Mila – Quebec AI Institute, I co-ran a live demonstration on the Boston Dynamics Spot
+          robot featuring two navigation systems:
+        </p>
+        <ul>
+          <li><strong><a href="papers-pages/vista.html">VISTA</a></strong>, my scale-aware visual navigation model.</li>
+          <li><strong>FARM</strong>, an interface for prompt-based navigation with Spot. Using a pre-collected
+            metric map, users ask the robot in natural language to go to specific places.
+            FARM was developed by <strong>Ria Aurora</strong>, a former Master's student in Liam Paull's lab
+            at Université de Montréal. I supported the demo by introducing Spot's basics and operation.</li>
+        </ul>
+        <p>
+          <strong>Collaboration:</strong> this demo brought together work from two labs and two research
+          backgrounds (learned visual navigation and language-driven, map-based navigation) on one shared
+          robot. That kind of collaboration runs through my work, from co-leading VISTA with a
+          dataset-focused researcher to supervising interns from very different starting points
+          (see <a href="#supervision">Supervision</a>).
+        </p>
+      </article>
+
+      <article class="demo-card">
+        <h3>VISTA on the Unitree G1 Humanoid — Demonstration for the Italian Embassy &amp; Italian Navy</h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> July 30, 2026</span>
+          <span class="demo-tag">Live robot demo</span>
+          <span class="demo-tag">Humanoid robotics</span>
+          <span class="demo-tag">Government &amp; defense</span>
+        </div>
+        <p>
+          I led a live demonstration of <a href="papers-pages/vista.html">VISTA</a>, my scale-aware visual
+          navigation model, deployed on a Unitree G1 humanoid robot for a delegation from the Italian
+          Embassy and the Italian Navy.
+        </p>
+        <ul>
+          <li>Deployed a learned, camera-only navigation policy on a humanoid platform in front of a live audience.</li>
+          <li>Prepared and ran the full system end to end: model, robot integration and on-site operation.</li>
+          <li>Explained the technology and its potential applications to non-specialist, high-level stakeholders.</li>
+        </ul>
+
+        <div class="demo-gallery">
+          <figure>
+            <img src="static/images/demos/g1-italian-embassy-1.png" alt="VISTA running on the Unitree G1 humanoid during the Italian Embassy and Italian Navy demonstration (photo 1)" loading="lazy">
+            <figcaption>Lab and VISTA presentation</figcaption>
+          </figure>
+          <figure>
+            <img src="static/images/demos/g1-italian-embassy-2.png" alt="VISTA running on the Unitree G1 humanoid during the Italian Embassy and Italian Navy demonstration (photo 2)" loading="lazy">
+            <figcaption>VISTA demonstration</figcaption>
+          </figure>
+          <figure>
+            <img src="static/images/demos/g1-italian-embassy-3.png" alt="VISTA running on the Unitree G1 humanoid during the Italian Embassy and Italian Navy demonstration (photo 3)" loading="lazy">
+            <figcaption>VISTA demonstration</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="demo-card">
+        <h3>Presenting VISTA &amp; Visual Navigation Models to Airbus</h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> July 9, 2026</span>
+          <span class="demo-tag">Industry presentation</span>
+          <span class="demo-tag">Aerospace R&amp;T</span>
+        </div>
+        <p>
+          I presented VISTA and the broader concept of Visual Navigation Models to a visiting Airbus
+          delegation, where I had the pleasure of presenting to Camille Sagues and Karim Mokaddem,
+          Head of Aircraft of Tomorrow R&amp;T at Airbus.
+        </p>
+        <ul>
+          <li>Introduced how learned visual navigation enables robots to navigate from camera images alone, across embodiments and environments.</li>
+          <li>Discussed real-world deployment results and how this research could translate to industrial use cases.</li>
+        </ul>
+      </article>
+
+      <article class="demo-card">
+        <h3><a href="csa.html">Robot Deployment on the Canadian Space Agency's Mars-Like Terrain</a></h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> September 29, 2025</span>
+          <span class="demo-tag">Field deployment</span>
+          <span class="demo-tag">2-day test</span>
+          <span class="demo-tag">Planetary analog terrain</span>
+        </div>
+        <p>
+          In Montréal, we spent two days at the Canadian Space Agency, which has a real-world,
+          Mars-like terrain with craters, sand hills and rocks. This was mostly a test for ourselves:
+          we wanted to see how visual navigation models behave in an environment very different
+          from the ones they were trained on.
+        </p>
+        <p><a class="btn-resume" href="csa.html">Videos &amp; photos from the field &rarr;</a></p>
+      </article>
+
+      <!-- TODO: set the mission date and move this card to its chronological position -->
+      <article class="demo-card">
+        <h3><a href="trou-du-diable.html">Radio-Canada Field Mission — Spot &amp; Drone in the Trou du Diable Cave</a></h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> Date TBD</span>
+          <span class="demo-tag">Field deployment</span>
+          <span class="demo-tag">Boston Dynamics Spot</span>
+          <span class="demo-tag">Cave exploration</span>
+          <span class="demo-tag">Media coverage</span>
+        </div>
+        <p>
+          For a Radio-Canada field mission, our team sent a Spot robot carrying a drone on its back
+          into Trou du Diable, a cave in Quebec. I was there in a support role, helping the rest of
+          the team on site.
+        </p>
+        <p>
+          When the water level in the cave rose, Maëlle Mathieu (Master's student) and I improvised
+          a waterproofing fix for Spot's exposed electronics from tape and plastic. With very limited
+          resources, it held, and the team deployed Spot successfully even where the water was very high.
+        </p>
+        <p><a class="btn-resume" href="trou-du-diable.html">Videos &amp; photos from the cave &rarr;</a></p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="container">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <article class="timeline-item">
+        <div class="org-logos">
+          <img class="org-logo" src="static/images/poly_logo_w.png" alt="Polytechnique Montréal">
+          <img class="org-logo" src="static/images/mila_logo.svg" alt="Mila – Quebec AI Institute">
+        </div>
+        <div class="timeline-content">
+          <h3><a href="lab.html">Polytechnique Montréal — MIST Lab</a> &amp; <a href="https://mila.quebec" target="_blank" rel="noopener">Mila</a></h3>
+          <p class="role">PhD Researcher</p>
+          <p class="dates">2024 — Present</p>
+          <p>Research on robot learning, safe reinforcement learning and visual navigation under the supervision of Giovanni Beltrame and Jana Pavlasek.</p>
+          <ul>
+            <li>Designed VISTA, a scale-aware visual navigation model conditioned on action history with a DINOv3 encoder.</li>
+            <li>Led a zero-shot real-world benchmark of five Visual Navigation Models across two robots and five environments.</li>
+            <li>Studied control barrier functions as safety instructors for reinforcement learning.</li>
+            <li>Supervised four students and interns (see <a href="#supervision">Supervision</a>).</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="org-logo org-icon" aria-hidden="true"><i class="fas fa-server"></i></div>
+        <div class="timeline-content">
+          <h3><a href="https://www.orange.com" target="_blank" rel="noopener">Orange</a> — Blagnac, France</h3>
+          <p class="role">Apprentice Production Engineer / DevOps Engineer</p>
+          <p class="dates">September 2019 — September 2022</p>
+          <ul>
+            <li>Automated the group's disaster recovery plan, then extended it with DNS migration and scheduler management.</li>
+            <li>Industrialized an end-to-end production validation chain (Ansible, Jenkins, GitLab CI/CD) so validated packages are immediately production-ready.</li>
+            <li>Initiated the anonymization of an Agile/SAFe train application database, coordinating all stakeholders.</li>
+            <li>Served as Scrum Master.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPERVISION ============ -->
+<section class="section alt" id="supervision">
+  <div class="container">
+    <h2>Supervision &amp; Mentoring</h2>
+    <p>I have supervised and mentored four students, taking on roles that range from tutor and project manager to co-author and research facilitator.</p>
+    <div class="timeline">
+
+      <article class="timeline-item">
+        <img class="org-logo" src="static/images/elodie_polytech_apris_scalay.svg" alt="Polytech Paris caley">
+        <div class="timeline-content">
+          <h3>Elodie Ughetto</h3>
+          <p class="role">Tutor &amp; Project Manager — RL for blimp flight, in partnership with Flying Whales</p>
+          <p>
+            Project goal: a blimp that uses reinforcement learning to reduce pilots' cognitive load.
+            Elodie started with no background in RL, so I acted as both tutor and manager. I taught her
+            the fundamentals of reinforcement learning and how simulation works, and guided her through
+            the whole project. The result was a set of task-driven RL policies for blimp flight, which
+            Flying Whales was pleased to receive.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="org-logos">
+          <img class="org-logo" src="static/images/poly_logo_w.png" alt="Polytechnique Montréal">
+        </div>
+        <div class="timeline-content">
+          <h3>Lily-Rose Ares</h3>
+          <p class="role">Supervisor — Canadian Baccalaureate intern</p>
+          <p>
+            I tasked Lily-Rose with packaging a Gazebo simulator in a Docker image, so the community can
+            easily deploy visual navigation models in simulation and visualize their behavior without a
+            complex setup.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <img class="org-logo" src="static/images/institue_science_tokyo.png" alt="Institute of Science Tokyo">
+        <div class="timeline-content">
+          <h3>Koki Kobayashi <span class="pub-venue">(<a href="https://www.isct.ac.jp/en" target="_blank" rel="noopener">Institute of Science Tokyo</a>)</span></h3>
+          <p class="role">Co-lead &amp; Mentor — <a href="papers-pages/vista.html">VISTA</a> (equal contribution)</p>
+          <p>
+            Together we produced VISTA. Koki's experience was limited to training on datasets, with no
+            simulation or robotics. I brought expertise in real robotic systems, robot learning and the
+            real-world deployment of AI models, and guided the work from training through to physical
+            deployment.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <img class="org-logo" src="static/images/tsung_en_lin_national_tawain_univ.png" alt="Nat Tawain Univ">
+        <div class="timeline-content">
+          <h3>Tsung-En Lin</h3>
+          <p class="role">Mentor — Vector-guided policies for out-of-distribution scenes</p>
+          <p>
+            I supported Tsung-En throughout his project on using vectors to guide policies in
+            out-of-distribution scenes. I also brought in collaborators from Mila with expertise in
+            this area to give him specialized support.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MRSS ============ -->
+<section class="section" id="mrss">
+  <div class="container">
+    <h2>Montréal Robotics Summer School</h2>
+    <p>From competition winner to organizing team: my journey with MRSS, held at Mila and Université de Montréal (Campus MIL).</p>
+    <div class="demo-list">
+
+      <article class="demo-card">
+        <h3>Organizing Team Member</h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> 2026</span>
+          <span class="demo-tag">Event organization</span>
+          <span class="demo-tag">Unitree Go2</span>
+          <span class="demo-tag">Teaching</span>
+        </div>
+        <ul>
+          <li>Ran preliminary testing on the Unitree Go2 quadruped to validate the previous year's codebase, so the rest of the team could build on it.</li>
+          <li>My main role was assisting participants with hands-on robotics during the school.</li>
+        </ul>
+        <p>
+          Having taken part in MRSS myself, it was a real pleasure to come back to the event as one of the helpers.
+        </p>
+        <div class="demo-gallery">
+          <figure>
+            <img src="static/images/mrss/mrss_2026.jpeg" alt="MRSS 2026" loading="lazy">
+            <figcaption>MRSS 2026</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="demo-card">
+        <h3>1st Place — MRSS Competition</h3>
+        <div class="demo-meta">
+          <span class="demo-tag date"><i class="far fa-calendar"></i> June 14, 2024</span>
+          <span class="demo-tag">Participant</span>
+          <span class="demo-tag">Winner</span>
+        </div>
+        <p>
+          Won first place in the Montréal Robotics Summer School competition as a participant.
+          The team received a personalized trophy cup and a RobotShop gift prize.
+        </p>
+        <div class="demo-gallery">
+          <figure>
+            <img src="static/images/mrss/mrss_20242.jpg" alt="MRSS 2024" loading="lazy">
+            <figcaption>MRSS 2024</figcaption>
+          </figure>
+        </div>
+      </article>
+
+    </div>
+    <p style="margin-top: 28px;"><a class="btn-resume" href="mrss.html">Full MRSS story &amp; photos &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section alt" id="education">
+  <div class="container">
+    <h2>Education</h2>
+    <div class="timeline">
+
+      <article class="timeline-item">
+        <img class="org-logo" src="static/images/poly_logo_w.png" alt="Polytechnique Montréal">
+        <div class="timeline-content">
+          <h3><a href="https://www.polymtl.ca/" target="_blank" rel="noopener">Polytechnique Montréal</a></h3>
+          <p class="role">PhD, Computer Engineering — Robotics &amp; AI</p>
+          <p class="dates">2023 — Present</p>
+          <p>Robot learning with reinforcement learning and visual navigation. Advisor: Giovanni Beltrame. Co-advisor: Jana Pavlasek.</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="org-logo org-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <h3><a href="https://www.enseeiht.fr/fr/index.html" target="_blank" rel="noopener">ENSEEIHT — Toulouse INP</a>, France</h3>
+          <p class="role">Engineering Degree, Computer Science &amp; Telecommunications (apprenticeship, double degree)</p>
+          <p class="dates">2019 — 2022</p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="org-logo org-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <h3><a href="http://www.iut-blagnac.fr" target="_blank" rel="noopener">IUT de Blagnac</a>, France</h3>
+          <p class="role">DUT in Computer Science</p>
+          <p class="dates">2017 — 2019</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="section" id="publications">
+  <div class="container">
+    <h2>Publications</h2>
+    <div class="pub-list">
+
+      <article class="pub-item">
+        <h3><a href="papers-pages/vista.html">VISTA: Scale-Aware Visual Navigation via Action History Conditioning</a></h3>
+        <p class="pub-authors">M. Guerrier*, K. Kobayashi*, S. Roy, J. Pavlasek, G. Beltrame &nbsp;(*equal contribution)</p>
+        <p class="pub-venue">arXiv preprint, 2026 &nbsp;
+          <a href="https://arxiv.org/abs/2606.17294" target="_blank" rel="noopener">Paper</a>
+          <a href="https://github.com/MaevaGuerrier/VISTA" target="_blank" rel="noopener">Code</a>
+        </p>
+      </article>
+
+      <article class="pub-item">
+        <h3><a href="papers-pages/zero-shot-eval.html">Can Vision Foundation Models Navigate? Zero-Shot Real-World Evaluation and Lessons Learned</a></h3>
+        <p class="pub-authors">M. Guerrier, K. Soma, J. Pavlasek, G. Beltrame</p>
+        <p class="pub-venue">arXiv preprint, 2026 &nbsp;
+          <a href="https://arxiv.org/abs/2603.25937" target="_blank" rel="noopener">Paper</a>
+          <a href="https://github.com/MaevaGuerrier/vnm-zeroshot-eval" target="_blank" rel="noopener">Code</a>
+        </p>
+      </article>
+
+      <article class="pub-item">
+        <h3><a href="papers-pages/control-barrier-safety-instructions.html">Guided by Guardrails: Control Barrier Functions as Safety Instructors for Robotic Learning</a></h3>
+        <p class="pub-authors">M. Guerrier, K. Soma, H. Fouad, G. Beltrame</p>
+        <p class="pub-venue">arXiv preprint, 2025 &nbsp;
+          <a href="https://arxiv.org/abs/2505.18858" target="_blank" rel="noopener">Paper</a>
+        </p>
+      </article>
+
+      <article class="pub-item">
+        <h3><a href="papers-pages/learning-control-barrier-survey.html">Learning Control Barrier Functions and their Application in Reinforcement Learning: A Survey</a></h3>
+        <p class="pub-authors">M. Guerrier, H. Fouad, G. Beltrame</p>
+        <p class="pub-venue">arXiv preprint, 2024 &nbsp;
+          <a href="https://arxiv.org/abs/2404.16879" target="_blank" rel="noopener">Paper</a>
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section class="section alt" id="awards">
+  <div class="container">
+    <h2>Honors, Awards &amp; Outreach</h2>
+    <div class="awards-grid">
+      <div class="award-item">
+        <h3><a href="mrss.html">1st Place — Montréal Robotics Summer School Competition</a></h3>
+        <p class="award-org">Mila &middot; June 14, 2024 &middot; Personalized trophy cup &amp; RobotShop gift prize</p>
+      </div>
+      <div class="award-item">
+        <h3>3rd Place — Assembly of Heads of Departments Competition</h3>
+        <p class="award-org">IUT, France &middot; Team redesign of the official website</p>
+      </div>
+      <div class="award-item">
+        <h3>Speaker — World Summit AI Americas</h3>
+        <p class="award-org">Presented Women in AI &amp; Robotics &middot; 2024</p>
+      </div>
+      <div class="award-item">
+        <h3>Core Team Member — Women in AI &amp; Robotics</h3>
+        <p class="award-org">Montréal &middot; Event organizer, reading group Q&amp;A lead, newsletter editor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <h3><a href="papers-pages/vista.html">VISTA</a></h3>
+        <p>Scale-aware visual navigation: action-history conditioning and a DINOv3 encoder, reaching 100% zero-shot goal prediction accuracy in outdoor, forest and office deployments.</p>
+      </article>
+
+      <article class="project-card">
+        <h3><a href="papers-pages/zero-shot-eval.html">VNM Zero-Shot Benchmark</a></h3>
+        <p>Real-world evaluation of GNM, ViNT, NoMaD, NaviBridger and CrossFormer, going beyond success rate with path, goal-recognition and perturbation-robustness metrics.</p>
+      </article>
+
+      <article class="project-card">
+        <h3>RL Blimp Flight — Flying Whales</h3>
+        <p>Task-driven reinforcement learning policies for blimp flight, aimed at reducing pilots' cognitive load.</p>
+      </article>
+
+      <article class="project-card">
+        <h3>Dockerized Gazebo for VNMs</h3>
+        <p>A ready-to-run Docker image with a Gazebo simulator, making it easy for the community to deploy and visualize visual navigation models.</p>
+      </article>
+
+      <article class="project-card">
+        <h3>AI &amp; Robotics Education at McGill</h3>
+        <p>Leading an educational initiative that introduces students to AI and robotics.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE (placeholder, hidden until filled) ============
+<section class="quote-block">
+  <blockquote>
+    &ldquo;Your favorite quote goes here.&rdquo;
+  </blockquote>
+  <p class="quote-attribution">— Attribution</p>
+</section>
+-->
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <h3>Contact</h3>
+      <p>Montréal, Canada</p>
+      <p><a href="mailto:maeva.guerrier@orange.fr">maeva.guerrier@orange.fr</a></p>
+    </div>
+    <div>
+      <h3>Let's Connect</h3>
+      <p><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+      <p><a href="https://github.com/MaevaGuerrier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></p>
+      <p><a href="https://scholar.google.ca/citations?user=4-GRCBsAAAAJ" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a></p>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Maeva Guerrier. All rights reserved.</p>
+</footer>
+
+<script src="static/js/portfolio.js"></script>
+</body>
+</html>
